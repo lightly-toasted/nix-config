@@ -15,6 +15,7 @@
     ./programs/firefox.nix
     ./programs/yazi.nix
     ./programs/nixcord.nix
+    ./programs/prismlauncher.nix
   ];
   
   home = {
