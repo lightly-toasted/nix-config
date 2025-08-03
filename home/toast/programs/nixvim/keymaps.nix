@@ -19,6 +19,11 @@
       }
       {
         mode = "n";
+        key = "<leader>d";
+        action = "<cmd>lua vim.diagnostic.open_float()<CR>";
+      }
+      {
+        mode = "n";
         key = "<leader>?";
         action = "<cmd>WhichKey<CR>";
         options.desc = "Show WhichKey popup";
