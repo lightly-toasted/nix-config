@@ -28,5 +28,6 @@
     ./plugins/web-devicons.nix
     ./plugins/wakatime.nix
     ./plugins/which-key.nix
+    ./plugins/lsp.nix
   ];
 }
