@@ -6,7 +6,7 @@
     
     ./programs/kitty.nix
     ./programs/git.nix
-    ./programs/nixvim.nix
+    ./programs/nixvim
     ./programs/fonts.nix
     ./programs/hyprland.nix
     ./programs/tofi.nix
