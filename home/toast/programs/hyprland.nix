@@ -10,19 +10,22 @@
     package = pkgs.hyprland;
     systemd.enable = false;
     settings = {
-      exec-once = [ "uwsm app -- firefox" ];
-      "$terminal" = "uwsm app -- kitty";
-      "$fileManager" = "uwsm app -- kitty yazi";
-      "$menu" = "uwsm app -- $(tofi-drun)";
-      "$mod" = "SUPER";
+      exec-once = [ "uwsm app -- firefox" "kime" ];
+
+     "$terminal" = "uwsm app -- kitty";
+     "$fileManager" = "uwsm app -- kitty yazi";
+     "$menu" = "uwsm app -- $(tofi-drun)";
+     "$mod" = "SUPER";
 
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-        "INPUT_METHOD,fcitx"
         "QT_QPA_PLATFORM,wayland"
+	"GTK_IM_MODULE,kime"
+	"QT_IM_MODULE,kime"
+	"XMODIFIERS,@im=kime"
       ];    
 
       bind = [
@@ -160,6 +163,8 @@
       };
 
       input = {
+        kb_layout = "us,kr";
+        kb_options = "grp:alt_shift_toggle";
         sensitivity = -0.6;
       };
       

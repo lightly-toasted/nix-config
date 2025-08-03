@@ -11,19 +11,26 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  networking.firewall.enable = false;
 
   time.timeZone = "Asia/Seoul";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "ko_KR.UTF-8";
-    LC_IDENTIFICATION = "ko_KR.UTF-8";
-    LC_MEASUREMENT = "ko_KR.UTF-8";
-    LC_MONETARY = "ko_KR.UTF-8";
-    LC_NAME = "ko_KR.UTF-8";
-    LC_NUMERIC = "ko_KR.UTF-8";
-    LC_PAPER = "ko_KR.UTF-8";
-    LC_TELEPHONE = "ko_KR.UTF-8";
-    LC_TIME = "ko_KR.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "ko_KR.UTF-8";
+      LC_IDENTIFICATION = "ko_KR.UTF-8";
+      LC_MEASUREMENT = "ko_KR.UTF-8";
+      LC_MONETARY = "ko_KR.UTF-8";
+      LC_NAME = "ko_KR.UTF-8";
+      LC_NUMERIC = "ko_KR.UTF-8";
+      LC_PAPER = "ko_KR.UTF-8";
+      LC_TELEPHONE = "ko_KR.UTF-8";
+      LC_TIME = "ko_KR.UTF-8";
+    };
+    inputMethod = {
+      enable = true;
+      type = "kime";
+    };
   };
 
   users.users.toast = {
@@ -46,11 +53,10 @@
     withUWSM = true;
     xwayland.enable = true;
   };
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.xserver = {
+    xkb.layout = "us";
+    videoDrivers = [ "nvidia" ];
   };
-  services.xserver.videoDrivers = [ "nvidia" ];
   environment.sessionVariables = {
     # WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
