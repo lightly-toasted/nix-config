@@ -14,6 +14,7 @@
   };
 
   imports = [
+    ./keymaps.nix
     ./plugins/bufferline.nix
     ./plugins/lualine.nix
     ./plugins/cmp.nix
