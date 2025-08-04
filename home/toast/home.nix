@@ -17,6 +17,7 @@
     ./programs/nixcord.nix
     ./programs/prismlauncher.nix
     ./programs/nodejs.nix
+    ./programs/btop.nix
   ];
   
   home = {
