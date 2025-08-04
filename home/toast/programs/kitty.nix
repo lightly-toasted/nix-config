@@ -1,3 +1,6 @@
 {
-  programs.kitty.enable = true;
+  programs.kitty = {
+    enable = true;
+    font.name = "FiraCode";
+  };
 }
