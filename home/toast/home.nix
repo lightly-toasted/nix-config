@@ -18,6 +18,7 @@
     ./programs/prismlauncher.nix
     ./programs/nodejs.nix
     ./programs/btop.nix
+    ./programs/waybar
   ];
   
   home = {
