@@ -32,6 +32,10 @@
       type = "kime";
     };
   };
+  services.xserver = {
+    xkb.layout = "us";
+    videoDrivers = [ "nvidia" ];
+  };
 
   users.users.toast = {
     isNormalUser = true;
@@ -53,10 +57,16 @@
     withUWSM = true;
     xwayland.enable = true;
   };
-  services.xserver = {
-    xkb.layout = "us";
-    videoDrivers = [ "nvidia" ];
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-volman
+    ];
   };
+  programs.xfconf.enable = true;
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images 
+
   environment.sessionVariables = {
     # WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";

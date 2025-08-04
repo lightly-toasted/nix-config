@@ -13,7 +13,7 @@
       exec-once = [ "uwsm app -- firefox" "kime" ];
 
      "$terminal" = "uwsm app -- kitty";
-     "$fileManager" = "uwsm app -- kitty yazi";
+     "$fileManager" = "uwsm app -- thunar";
      "$menu" = "uwsm app -- $(tofi-drun)";
      "$mod" = "SUPER";
 
