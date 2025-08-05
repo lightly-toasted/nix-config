@@ -19,6 +19,7 @@
     ./programs/nodejs.nix
     ./programs/btop.nix
     ./programs/waybar
+    ./programs/dunst.nix
   ];
   
   home = {
