@@ -10,7 +10,6 @@
     ./programs/fonts.nix
     ./programs/hyprland.nix
     ./programs/tofi.nix
-    ./programs/wlogout.nix
     ./programs/zsh.nix
     ./programs/firefox.nix
     ./programs/yazi.nix
@@ -26,6 +25,9 @@
     username = "toast";
     homeDirectory = "/home/toast";
     stateVersion = "24.11";
+    file = {
+      "bin" = { source = ./bin; recursive = true; };
+    };
   };
   
   nixpkgs.config.allowUnfree = true;

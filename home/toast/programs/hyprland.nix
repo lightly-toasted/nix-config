@@ -72,7 +72,7 @@
         "$mod, mouse_up, workspace, e-1"
 	
 	"$mod SHIFT, S, exec, env HYPRSHOT_DIR=/data/Backup/Screenshots hyprshot -m region"
-	"$mod SHIFT, E, exec, wlogout"
+	"$mod SHIFT, E, exec, ~/bin/powermenu.sh"
       ];
 
       bindel = [
