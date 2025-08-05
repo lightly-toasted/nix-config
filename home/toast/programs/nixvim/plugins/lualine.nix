@@ -4,7 +4,7 @@
     settings = {
       options = {
         icons_enabled = true;
-        theme = "ayu_dark";
+        theme = "moonfly";
       };
     };
   };

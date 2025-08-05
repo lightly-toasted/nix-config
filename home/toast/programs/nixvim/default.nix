@@ -2,7 +2,9 @@
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
-    colorschemes.ayu.enable = true;
+    colorschemes.moonfly = {
+      enable = true;
+    };
     opts = {
       number = true;
       relativenumber = true;
