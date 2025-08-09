@@ -47,8 +47,8 @@
       pulseaudio = {
         format = "{volume}%  {format_source}";
         format-bluetooth = "{volume}%  {format_source}";
-        format-bluetooth-muted = " {format_source}";
-        format-muted = " {format_source}";
+        format-bluetooth-muted = "   {format_source}";
+        format-muted = "   {format_source}";
         format-source = "{volume}% ";
         format-source-muted = "";
         on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
