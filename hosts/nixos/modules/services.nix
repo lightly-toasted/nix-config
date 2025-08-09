@@ -25,6 +25,7 @@
       "org.prismlauncher.PrismLauncher"
       "org.vinegarhq.Sober"
       "org.vinegarhq.Vinegar"
+      "com.spotify.Client"
     ];
     overrides = {
       "org.prismlauncher.PrismLauncher".Context = {
