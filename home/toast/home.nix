@@ -3,6 +3,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     inputs.nixcord.homeModules.nixcord
+    inputs.nix-flatpak.homeManagerModules.nix-flatpak
     
     ./programs/kitty.nix
     ./programs/git.nix
@@ -14,7 +15,6 @@
     ./programs/firefox.nix
     ./programs/yazi.nix
     ./programs/nixcord.nix
-    ./programs/prismlauncher.nix
     ./programs/nodejs.nix
     ./programs/btop.nix
     ./programs/waybar

@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
     [ 
+      inputs.nix-flatpak.nixosModules.nix-flatpak
       ./hardware-configuration.nix
     ];
 
@@ -94,6 +95,27 @@
     };
   };
   services.zerotierone.enable = true;
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "org.prismlauncher.PrismLauncher"
+      "org.vinegarhq.Sober"
+      "org.vinegarhq.Vinegar"
+    ];
+    overrides = {
+      "org.prismlauncher.PrismLauncher".Context = {
+        filesystems = [
+          "home"
+        ];
+      };
+      "org.vinegarhq.Sober".Context = {
+        filesystems = [
+          "xdg-run/app/com.discordapp.Discord:create"
+          "xdg-run/discord-ipc-0"
+        ];
+      };
+    };
+  };
 
   system.stateVersion = "25.05";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
