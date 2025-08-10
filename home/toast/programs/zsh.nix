@@ -8,6 +8,7 @@
     
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake /home/toast/nix-config";
+      gs = "git status";
     };
   };
 }
