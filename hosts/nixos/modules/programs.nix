@@ -14,4 +14,5 @@
     ];
   };
   programs.xfconf.enable = true;
+  programs.ssh.startAgent = true;
 }

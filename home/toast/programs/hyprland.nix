@@ -10,7 +10,7 @@
     package = pkgs.hyprland;
     systemd.enable = false;
     settings = {
-      exec-once = [ "uwsm app -- firefox" "waybar" ];
+      exec-once = [ "waybar" "uwsm app -- keepassxc" "uwsm app -- firefox" ];
 
      "$terminal" = "uwsm app -- kitty";
      "$fileManager" = "uwsm app -- thunar";

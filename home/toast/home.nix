@@ -19,6 +19,7 @@
     ./programs/btop.nix
     ./programs/waybar
     ./programs/dunst.nix
+    ./programs/keepassxc.nix
   ];
   
   home = {

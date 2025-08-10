@@ -9,9 +9,9 @@
       OfferToSaveLogins = false;
       PasswordManagerEnabled = false;
       ExtensionSettings = {
-        # C2 Password
-        "c2password@synology.com" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/c2-password/latest.xpi";
+        # KeePassXC-Browser
+        "keepassxc-browser@keepassxc.org" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/keepassxc-browser/latest.xpi";
           installation_mode = "normal_installed";
         };
         # Vimium C
