@@ -37,15 +37,15 @@
         "$mod, Y, togglesplit"
         "$mod, F, fullscreen"
 
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up, movefocus, u"
-        "$mod, down, movefocus, d"
-
         "$mod, H, movefocus, l"
         "$mod, J, movefocus, d"
         "$mod, K, movefocus, u"
         "$mod, L, movefocus, r"
+
+        "$mod SHIFT, H, movewindow, l"
+        "$mod SHIFT, J, movewindow, d"
+        "$mod SHIFT, K, movewindow, u"
+        "$mod SHIFT, L, movewindow, r"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -68,11 +68,9 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
-        "$mod, mouse_down, workspace, e+1"
-        "$mod, mouse_up, workspace, e-1"
 	
-	"$mod SHIFT, S, exec, env HYPRSHOT_DIR=/data/Backup/Screenshots hyprshot -m region"
-	"$mod SHIFT, E, exec, ~/bin/powermenu.sh"
+	      "$mod SHIFT, S, exec, env HYPRSHOT_DIR=/data/Backup/Screenshots hyprshot -m region"
+        "$mod SHIFT, E, exec, ~/bin/powermenu.sh"
       ];
 
       bindel = [
