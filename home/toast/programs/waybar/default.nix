@@ -6,7 +6,7 @@
       position = "top";
       height = 5;
       output = "HDMI-A-1";
-      modules-left = [ ];
+      modules-left = [ "custom/mouse-actions" ];
       modules-center = [ ];
       modules-right = [
         "pulseaudio"
@@ -60,6 +60,15 @@
         format-ok = "✓";
         system = true;
         user = false;
+      };
+
+      "custom/mouse-actions" = {
+        format = "    {}";
+        exec = "tail -n 1 -F ~/.config/mouse-actions/state 2>/dev/null";
+        on-click = "run-mouse-action";
+        on-scroll-down = "cycle-mouse-action";
+        return-type = "text";
+        restart-interval = false;
       };
     }];
   };

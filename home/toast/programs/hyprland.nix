@@ -5,6 +5,7 @@
     pkgs.tofi
   ];
 
+  programs.mouse-actions.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
@@ -23,10 +24,10 @@
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "QT_QPA_PLATFORM,wayland"
-	"GTK_IM_MODULE,kime"
-	"QT_IM_MODULE,kime"
-	"XMODIFIERS,@im=kime"
-      ];    
+        "GTK_IM_MODULE,kime"
+        "QT_IM_MODULE,kime"
+        "XMODIFIERS,@im=kime"
+        ];    
 
       bind = [
         "$mod, Q, exec, $terminal"
@@ -71,6 +72,9 @@
 	
 	      "$mod SHIFT, S, exec, env HYPRSHOT_DIR=/data/Backup/Screenshots hyprshot -m region"
         "$mod SHIFT, E, exec, ~/bin/powermenu.sh"
+
+        "$mod, mouse:277, exec, cycle-mouse-action"
+        ", mouse:277, exec, run-mouse-action"
       ];
 
       bindel = [

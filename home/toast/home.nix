@@ -20,6 +20,7 @@
     ./programs/waybar
     ./programs/dunst.nix
     ./programs/keepassxc.nix
+    ./programs/mouse-actions
   ];
   
   home = {
