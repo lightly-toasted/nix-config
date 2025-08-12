@@ -5,23 +5,23 @@
     inputs.nixcord.homeModules.nixcord
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     
-    ./programs/kitty.nix
-    ./programs/git.nix
-    ./programs/nixvim
-    ./programs/fonts.nix
-    ./programs/hyprland.nix
-    ./programs/tofi.nix
-    ./programs/zsh.nix
-    ./programs/firefox.nix
-    ./programs/yazi.nix
-    ./programs/nixcord.nix
-    ./programs/nodejs.nix
-    ./programs/btop.nix
-    ./programs/waybar
-    ./programs/dunst.nix
-    ./programs/keepassxc.nix
-    ./programs/mouse-actions
-    ./programs/hypridle.nix
+    ./modules/kitty.nix
+    ./modules/git.nix
+    ./modules/nixvim
+    ./modules/fonts.nix
+    ./modules/hyprland.nix
+    ./modules/tofi.nix
+    ./modules/zsh.nix
+    ./modules/firefox.nix
+    ./modules/yazi.nix
+    ./modules/nixcord.nix
+    ./modules/nodejs.nix
+    ./modules/btop.nix
+    ./modules/waybar
+    ./modules/dunst.nix
+    ./modules/keepassxc.nix
+    ./modules/mouse-actions
+    ./modules/hypridle.nix
   ];
   
   home = {
