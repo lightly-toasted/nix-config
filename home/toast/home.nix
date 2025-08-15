@@ -22,6 +22,7 @@
     ./modules/keepassxc.nix
     ./modules/mouse-actions
     ./modules/hypridle.nix
+    ./modules/obsidian.nix
   ];
   
   home = {
