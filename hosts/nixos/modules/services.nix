@@ -18,7 +18,7 @@
       }; 
     };
   };
-  services.zerotierone.enable = true;
+  services.tailscale.enable = true;
   services.flatpak = {
     enable = true;
     packages = [
