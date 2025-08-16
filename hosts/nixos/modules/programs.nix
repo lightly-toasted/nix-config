@@ -16,4 +16,5 @@
   programs.xfconf.enable = true;
   programs.ssh.startAgent = true;
   programs.ydotool.enable = true;
+  programs.steam.enable = true;
 }
