@@ -23,6 +23,7 @@
     ./modules/mouse-actions
     ./modules/hypridle.nix
     ./modules/obsidian.nix
+    ./modules/xdg.nix
   ];
   
   home = {
