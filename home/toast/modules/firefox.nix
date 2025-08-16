@@ -34,6 +34,11 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/roseal/latest.xpi";
           installation_mode = "normal_installed";
         };
+        # Raindrop.io
+        "jid0-adyhmvsP91nUO8pRv0Mn2VKeB84@jetpack" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/raindropio/latest.xpi";
+          installation_mode = "normal_installed";
+        };
       };
     };
   };
