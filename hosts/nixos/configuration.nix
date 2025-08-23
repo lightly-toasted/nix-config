@@ -4,6 +4,7 @@
   imports =
     [ 
       inputs.nix-flatpak.nixosModules.nix-flatpak
+      inputs.sops-nix.nixosModules.sops
       ./hardware-configuration.nix
 
       ./modules/boot.nix
@@ -15,6 +16,7 @@
       ./modules/hardware.nix
       ./modules/environment.nix
       ./modules/programs.nix
+      ./modules/sops.nix
     ];
 
   system.stateVersion = "25.05";

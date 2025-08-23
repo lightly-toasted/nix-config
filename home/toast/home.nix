@@ -4,6 +4,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     inputs.nixcord.homeModules.nixcord
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
+    inputs.sops-nix.homeManagerModules.sops
     
     ./modules/kitty.nix
     ./modules/git.nix
@@ -24,6 +25,7 @@
     ./modules/hypridle.nix
     ./modules/obsidian.nix
     ./modules/xdg.nix
+    ./modules/sops.nix
   ];
   
   home = {

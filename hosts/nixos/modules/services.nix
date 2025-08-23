@@ -18,7 +18,10 @@
       }; 
     };
   };
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    authKeyFile = config.sops.secrets."tailscale/authkey".path;
+  };
   services.flatpak = {
     enable = true;
     packages = [

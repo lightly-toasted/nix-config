@@ -14,19 +14,26 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+    let
+      rootPath = ./.;
+    in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs rootPath; };
         modules = [
           ./hosts/nixos/configuration.nix
 	      ];
       };
       homeConfigurations."toast@nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = { inherit inputs rootPath; };
         modules = [
           ./home/toast/home.nix
         ];

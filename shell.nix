@@ -5,5 +5,6 @@ pkgs.mkShell {
     nix
     home-manager
     git
+    sops
   ];
 }
