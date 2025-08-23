@@ -26,6 +26,7 @@
     ./modules/obsidian.nix
     ./modules/xdg.nix
     ./modules/sops.nix
+    ./modules/gemini-cli.nix
   ];
   
   home = {
