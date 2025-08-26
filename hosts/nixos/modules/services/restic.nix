@@ -12,7 +12,7 @@
       "/data/Backup"
       "/home/toast/workspace"
     ];
-    repository = "rclone:gdrive/restic";
+    repository = "rclone:gdrive:restic";
     rcloneConfigFile = config.sops.secrets."restic/rclone-config".path;
     pruneOpts = [
       "--keep-daily 7"

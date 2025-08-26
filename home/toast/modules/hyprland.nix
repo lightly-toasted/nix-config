@@ -71,7 +71,7 @@
         "$mod SHIFT, 0, movetoworkspace, 10"
 	
 	      "$mod SHIFT, S, exec, env HYPRSHOT_DIR=/data/Backup/Screenshots hyprshot -m region"
-        "$mod SHIFT, E, exec, ~/bin/powermenu.sh"
+        "$mod SHIFT, E, exec, powermenu"
 
         "$mod, mouse:277, exec, cycle-mouse-action"
         ", mouse:277, exec, run-mouse-action"

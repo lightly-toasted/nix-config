@@ -6,5 +6,6 @@
     ./greetd.nix
     ./tailscale.nix
     ./flatpak.nix
+    ./restic.nix
   ];
 }

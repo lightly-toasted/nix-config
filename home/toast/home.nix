@@ -17,9 +17,6 @@
     username = "toast";
     homeDirectory = "/home/toast";
     stateVersion = "24.11";
-    file = {
-      "bin" = { source = ./bin; recursive = true; };
-    };
   };
 
   nixpkgs.config.allowUnfree = true;
