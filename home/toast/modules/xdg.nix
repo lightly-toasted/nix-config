@@ -11,5 +11,6 @@
         "x-scheme-handler/roblox-studio-auth" = "org.vinegarhq.Vinegar.studio.desktop";
       };
     };
+    configFile."mimeapps.list".force = true;
   };
 }
