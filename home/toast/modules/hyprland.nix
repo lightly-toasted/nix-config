@@ -19,8 +19,6 @@
      "$mod" = "SUPER";
 
       env = [
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_SIZE,24"
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "QT_QPA_PLATFORM,wayland"
@@ -175,5 +173,14 @@
         "nofocus,class:^%,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
     };
+  };
+
+  home.pointerCursor = {
+    package = pkgs.rose-pine-cursor;
+    name = "BreezeX-RosePine-Linux";
+    size = 24;
+
+    gtk.enable = true;
+    x11.enable = true;
   };
 }
