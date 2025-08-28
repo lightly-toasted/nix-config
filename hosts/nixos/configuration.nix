@@ -5,6 +5,7 @@
     [ 
       inputs.nix-flatpak.nixosModules.nix-flatpak
       inputs.sops-nix.nixosModules.sops
+      inputs.lanzaboote.nixosModules.lanzaboote
       ./hardware-configuration.nix
     ] ++ (
       let
