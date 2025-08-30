@@ -46,6 +46,11 @@
         "$mod SHIFT, K, movewindow, u"
         "$mod SHIFT, L, movewindow, r"
 
+        "$mod ALT, H, resizeactive, -50 0"
+        "$mod ALT, J, resizeactive, 0 50"
+        "$mod ALT, K, resizeactive, 0 -50"
+        "$mod ALT, L, resizeactive, 50 0"
+
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
