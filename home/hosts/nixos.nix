@@ -7,10 +7,12 @@
     inputs.sops-nix.homeManagerModules.sops
   ] ++ (
     let
-      modulesPath = ./modules;
-      moduleFiles = builtins.attrNames (builtins.readDir modulesPath);
+      modulesPath = ../modules;
+      cliModules = builtins.attrNames (builtins.readDir ( modulesPath + "/cli" ));
+      graphicalModules = builtins.attrNames (builtins.readDir ( modulesPath + "/graphical" ));
     in
-      map (module: modulesPath + ("/" + module)) moduleFiles
+      map (module: modulesPath + "/cli/${module}") cliModules
+      ++ map (module: modulesPath + "/graphical/${module}") graphicalModules
   );
 
   home = {

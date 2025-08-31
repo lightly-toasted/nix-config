@@ -29,18 +29,28 @@
       rootPath = ./.;
     in
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs rootPath; };
-        modules = [
-          ./hosts/nixos/configuration.nix
-	      ];
+      nixosConfigurations = {
+        nixos = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs rootPath; };
+          modules = [ ./hosts/nixos/configuration.nix ];
+        };
+        wsl = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs rootPath; };
+          modules = [ ./hosts/wsl/configuration.nix ];
+        };
       };
-      homeConfigurations."toast@nixos" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs rootPath; };
-        modules = [
-          ./home/toast/home.nix
-        ];
+
+      homeConfigurations = {
+        "toast@nixos" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs rootPath; };
+          modules = [ ./home/hosts/nixos.nix ];
+        };
+        "toast@wsl" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs rootPath; };
+          modules = [ ./home/hosts/wsl.nix ];
+        };
       };
 
       packages.x86_64-linux.default = self.homeConfigurations."toast@nixos".activationPackage;
