@@ -7,5 +7,6 @@
     ./tailscale.nix
     ./flatpak.nix
     ./restic.nix
+    ./syncthing.nix
   ];
 }
