@@ -82,6 +82,12 @@
         action = "<cmd>Telescope buffers<CR>";
         options.desc = "Telescope: List Buffers";
       }
+      {
+        mode = ["n" "v"];
+        key = "<leader>ca";
+        action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
+        options.desc = "LSP Code Action";
+      }
     ];
   };
 }
