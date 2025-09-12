@@ -7,7 +7,6 @@
         UpdateBinaryPath = false;
         AllowLocalhostWithPasskeys = true;
       };
-      SSHAgent.Enabled = true;
       GUI = {
         MinimizeToTray = true;
         MinimizeOnStartup = true;
