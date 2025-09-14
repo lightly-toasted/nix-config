@@ -10,6 +10,7 @@
     settings = {
       devices = {
         "phone" = { id = "XIRT2YS-3PZY7PF-PL4QTYK-LCYCSKW-GARN5N6-KBWGSP6-YZDQGED-N7R6YQF"; };
+        "tablet" = { id = "BCSESXD-F5NOKTH-QPTHZEY-XITQPKC-BVWMA36-YM72QIS-JOUPIGN-2S7LRAU"; };
       };
       folders = {
         "keepass" = {
@@ -18,7 +19,7 @@
         };
         "obsidian" = {
           path = "/data/Backup/Obsidian/";
-          devices = [ "phone" ];
+          devices = [ "phone" "tablet" ];
         };
       };
     };
