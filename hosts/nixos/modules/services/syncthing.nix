@@ -17,7 +17,7 @@
           devices = [ "phone" ];
         };
         "obsidian" = {
-          path = "/home/toast/Obsidian/";
+          path = "/data/Backup/Obsidian/";
           devices = [ "phone" ];
         };
       };

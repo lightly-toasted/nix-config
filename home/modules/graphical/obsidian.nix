@@ -1,8 +1,3 @@
 {
-  programs.obsidian = {
-    enable = true;
-    vaults."Obsidian" =  {
-      enable = true;
-    };
-  };
+  programs.obsidian.enable = true;
 }
