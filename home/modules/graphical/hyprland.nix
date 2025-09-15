@@ -75,6 +75,7 @@
 	
 	      "$mod SHIFT, S, exec, env HYPRSHOT_DIR=/data/Backup/Screenshots hyprshot -m region"
         "$mod SHIFT, E, exec, powermenu"
+        "$mod, V, exec, cliphist list | tofi | cliphist decode | wl-copy"
 
         "$mod, mouse:277, exec, cycle-mouse-action"
         ", mouse:277, exec, run-mouse-action"
