@@ -197,3 +197,10 @@ label:focus {
   margin: 6px 3px;
   min-width: 16px;
 }
+
+#privacy {
+  background-color: #daad50;
+  color: #422d10;
+  padding: 0 10px;
+  margin: 5px 3px;
+}

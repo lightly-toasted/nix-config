@@ -7,7 +7,7 @@
       height = 5;
       output = "HDMI-A-1";
       modules-left = [ "custom/mouse-actions" ];
-      modules-center = [ ];
+      modules-center = [ "privacy" ];
       modules-right = [
         "pulseaudio"
         "network"
@@ -60,6 +60,16 @@
         format-ok = "✓";
         system = true;
         user = false;
+      };
+
+      privacy = {
+        modules = [
+          { type = "screenshare"; }
+          { type = "audio-out"; }
+          { type = "audio-in"; }
+        ];
+
+        icon-size = 14;
       };
 
       "custom/mouse-actions" = {
