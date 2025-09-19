@@ -8,7 +8,9 @@
       text-color = "FFFFFF";
       prompt-text = "run: ";
       num-results = 7;
-      selection-color = "FF005F";
+      selection-background = "FFFFFFCC";
+      selection-background-padding = "4,1000";
+      selection-color = "000000";
       border-width = 0;
       outline-width = 0;
       result-spacing = 8;
