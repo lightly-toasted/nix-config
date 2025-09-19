@@ -65,7 +65,6 @@
       privacy = {
         modules = [
           { type = "screenshare"; }
-          { type = "audio-out"; }
           { type = "audio-in"; }
         ];
 
