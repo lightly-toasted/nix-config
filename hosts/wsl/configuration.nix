@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -7,6 +7,8 @@
 
   wsl.enable = true;
   wsl.defaultUser = "toast";
+  programs.zsh.enable = true;
+  users.users.toast.shell = pkgs.zsh;
 
   networking.hostName = "wsl";
 
