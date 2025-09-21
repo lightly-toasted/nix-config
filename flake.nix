@@ -39,6 +39,7 @@
           modules = [ ./hosts/nixos/configuration.nix ];
         };
         wsl = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = { inherit inputs rootPath; };
           modules = [ ./hosts/wsl/configuration.nix ];
         };
