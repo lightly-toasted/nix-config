@@ -13,10 +13,6 @@
         "tablet" = { id = "BCSESXD-F5NOKTH-QPTHZEY-XITQPKC-BVWMA36-YM72QIS-JOUPIGN-2S7LRAU"; };
       };
       folders = {
-        "keepass" = {
-          path = "/data/Backup/Keepass/";
-          devices = [ "phone" ];
-        };
         "obsidian" = {
           path = "/data/Backup/Obsidian/";
           devices = [ "phone" "tablet" ];
