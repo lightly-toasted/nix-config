@@ -43,6 +43,11 @@
           specialArgs = { inherit inputs rootPath; };
           modules = [ ./hosts/wsl/configuration.nix ];
         };
+        vps = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs rootPath; };
+          modules = [ ./hosts/vps/configuration.nix ];
+        };
       };
 
       homeConfigurations = {
