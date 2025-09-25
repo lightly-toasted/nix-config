@@ -4,5 +4,6 @@
     ./vaultwarden.nix
     ./openssh.nix
     ./zipline.nix
+    ./caddy.nix
   ];
 }
