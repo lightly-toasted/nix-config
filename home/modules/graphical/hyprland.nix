@@ -1,10 +1,6 @@
-{ pkgs, ... }: {
-  home.packages = [
-    pkgs.playerctl
-    pkgs.hyprshot
-    pkgs.tofi
-  ];
+{ pkgs, ... }:
 
+{
   programs.mouse-actions.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
@@ -15,7 +11,7 @@
 
      "$terminal" = "uwsm app -- kitty";
      "$fileManager" = "uwsm app -- thunar";
-     "$menu" = "uwsm app -- $(tofi-drun)";
+     "$menu" = "uwsm app -- $(${pkgs.tofi}/bin/tofi-drun)";
      "$mod" = "SUPER";
 
       env = [
@@ -72,10 +68,11 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
-	
-	      "$mod SHIFT, S, exec, env HYPRSHOT_DIR=/data/Backup/Screenshots hyprshot -m region"
+	      
+        "$mod, S, exec, hyprshot-save --no-upload"
+	      "$mod SHIFT, S, exec, hyprshot-save"
         "$mod SHIFT, E, exec, powermenu"
-        "$mod, V, exec, cliphist list | tofi | cliphist decode | wl-copy"
+        "$mod, V, exec, cliphist list | ${pkgs.tofi}/bin/tofi | cliphist decode | wl-copy"
 
         "$mod, mouse:277, exec, cycle-mouse-action"
         ", mouse:277, exec, run-mouse-action"
@@ -89,11 +86,11 @@
       ];
 
       bindl = [
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioPause, exec, playerctl play-pause"
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioPrev, exec, playerctl previous"
-        ", XF86Tools, exec, playerctl play-pause"
+        ", XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"
+        ", XF86AudioPause, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
+        ", XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
+        ", XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous"
+        ", XF86Tools, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
       ];
 
       bindm = [
