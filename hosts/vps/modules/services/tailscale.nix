@@ -7,5 +7,6 @@
     enable = true;
     authKeyFile = config.sops.secrets."tailscale/authkey".path;
     useRoutingFeatures = "both";
+    permitCertUid = "caddy";
   };
 }
