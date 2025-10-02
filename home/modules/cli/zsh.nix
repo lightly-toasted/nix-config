@@ -7,8 +7,9 @@
     syntaxHighlighting.enable = true;
     
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake /home/toast/nix-config";
       gs = "git status";
+      gl = "git log --oneline --graph --decorate --all";
+      ga = "git add --all";
     };
   };
 }
