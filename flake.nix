@@ -31,6 +31,8 @@
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
     let
       rootPath = ./.;
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
     in
     {
       nixosConfigurations = {
@@ -63,6 +65,19 @@
         };
       };
 
-      packages.x86_64-linux.default = self.homeConfigurations."toast@nixos".activationPackage;
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = [
+          pkgs.nix
+          pkgs.home-manager
+          pkgs.sops
+        ];
+
+        shellHook = ''
+          HOST=$(hostname)
+          alias deploy-nixos="sudo nixos-rebuild switch --flake .#$HOST"
+          alias deploy-vps="nixos-rebuild switch --flake .#vps --target-host root@vps"
+          alias deploy-home="home-manager switch --flake .#toast@$HOST"
+        '';
+      };
     };
 }
