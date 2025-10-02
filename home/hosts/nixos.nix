@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     inputs.nixcord.homeModules.nixcord
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     inputs.sops-nix.homeManagerModules.sops

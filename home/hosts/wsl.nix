@@ -2,9 +2,7 @@
 
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
-    inputs.nixcord.homeModules.nixcord
-    inputs.nix-flatpak.homeManagerModules.nix-flatpak
+    inputs.nixvim.homeModules.nixvim
     inputs.sops-nix.homeManagerModules.sops
   ] ++ (
     let

@@ -2,9 +2,6 @@
 
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
-    inputs.nixcord.homeModules.nixcord
-    inputs.nix-flatpak.homeManagerModules.nix-flatpak
     inputs.sops-nix.homeManagerModules.sops
 
     ../modules/cli/git.nix
