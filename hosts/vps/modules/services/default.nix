@@ -5,5 +5,6 @@
     ./openssh.nix
     ./zipline.nix
     ./caddy.nix
+    ./forgejo.nix
   ];
 }
