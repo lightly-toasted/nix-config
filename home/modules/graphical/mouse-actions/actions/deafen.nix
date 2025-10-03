@@ -2,7 +2,7 @@
 
 let
   script = pkgs.writeShellScriptBin "deafen-action" ''
-    hyprctl dispatch sendshortcut CTRL+SHIFT, D, 'class:^(vencord)$'
+    hyprctl dispatch sendshortcut CTRL+SHIFT, D, 'class:^(vesktop)$'
   '';
 in
 {
