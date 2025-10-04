@@ -20,6 +20,9 @@ let
         "autoclick")
             systemd-run --user ${actions.autoclick.package}/bin/autoclick-action
             ;;
+        "flick")
+            systemd-run --user ${actions.flick.package}/bin/flick-action
+            ;;
     esac
   '';
 in

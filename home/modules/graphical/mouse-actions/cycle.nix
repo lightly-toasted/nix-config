@@ -14,6 +14,7 @@ let
     case "$CURRENT_ACTION" in
         "deafen") NEW_ACTION="sober-lag" ;;
         "sober-lag") NEW_ACTION="autoclick" ;;
+        "autoclick") NEW_ACTION="flick" ;;
         *) NEW_ACTION="deafen"
     esac
 
