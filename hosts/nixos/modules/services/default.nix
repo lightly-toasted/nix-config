@@ -8,5 +8,6 @@
     ./flatpak.nix
     ./restic.nix
     ./syncthing.nix
+    ./zerotierone.nix
   ];
 }
