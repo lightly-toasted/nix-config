@@ -1,10 +1,12 @@
 { config, ... }:
 
 {
-  sops.secrets."restic/password" = { };
-  sops.secrets."restic/rclone-config" = { };
+  sops.secrets = {
+    "restic/password" = {};
+    "restic/env" = {};
+  };
 
-  services.restic.backups.gdrive = {
+  services.restic.backups.b2 = {
     initialize = true;
     inhibitsSleep = true;
     passwordFile = config.sops.secrets."restic/password".path;
@@ -12,8 +14,9 @@
       "/data/Backup"
       "/home/toast/workspace"
     ];
-    repository = "rclone:gdrive:restic";
-    rcloneConfigFile = config.sops.secrets."restic/rclone-config".path;
+    exclude = [ "node_modules" ];
+    repository = "s3:https://s3.us-east-005.backblazeb2.com/restic-backups-0";
+    environmentFile = config.sops.secrets."restic/env".path;
     pruneOpts = [
       "--keep-daily 7"
       "--keep-weekly 3"
