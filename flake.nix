@@ -63,6 +63,11 @@
           extraSpecialArgs = { inherit inputs rootPath; };
           modules = [ ./home/hosts/wsl.nix ];
         };
+        "android@y2q" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs rootPath; };
+          modules = [ ./home/hosts/y2q.nix ];
+        };
       };
 
       devShells.${system}.default = pkgs.mkShell {
@@ -76,7 +81,7 @@
           HOST=$(hostname)
           alias deploy-nixos="sudo nixos-rebuild switch --flake .#$HOST"
           alias deploy-vps="nixos-rebuild switch --flake .#vps --target-host root@vps"
-          alias deploy-home="home-manager switch --flake .#toast@$HOST"
+          alias deploy-home="home-manager switch --flake .#$USER@$HOST"
         '';
       };
     };

@@ -1,8 +1,8 @@
-{ rootPath, ... }:
+{ rootPath, config, ... }:
 
 {
   sops.defaultSopsFile = rootPath + /secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
 
-  sops.age.keyFile = "/home/toast/.config/sops/age/keys.txt";
+  sops.age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
 }
