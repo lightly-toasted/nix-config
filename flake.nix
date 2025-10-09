@@ -31,8 +31,8 @@
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
     let
       rootPath = ./.;
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+      systems = [ "x86_64-linux" "aarch64-linux" ];
+      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
     in
     {
       nixosConfigurations = {
@@ -64,25 +64,32 @@
           modules = [ ./home/hosts/wsl.nix ];
         };
         "android@y2q" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          pkgs = nixpkgs.legacyPackages.aarch64-linux;
           extraSpecialArgs = { inherit inputs rootPath; };
           modules = [ ./home/hosts/y2q.nix ];
         };
       };
 
-      devShells.${system}.default = pkgs.mkShell {
-        buildInputs = [
-          pkgs.nix
-          pkgs.home-manager
-          pkgs.sops
-        ];
+      devShells = forAllSystems (system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+        {
+          default = pkgs.mkShell {
+            buildInputs = [
+              pkgs.nix
+              pkgs.home-manager
+              pkgs.sops
+            ];
 
-        shellHook = ''
-          HOST=$(hostname)
-          alias deploy-nixos="sudo nixos-rebuild switch --flake .#$HOST"
-          alias deploy-vps="nixos-rebuild switch --flake .#vps --target-host root@vps"
-          alias deploy-home="home-manager switch --flake .#$USER@$HOST"
-        '';
-      };
+            shellHook = ''
+              HOST=$(hostname)
+              alias deploy-nixos="sudo nixos-rebuild switch --flake .#$HOST"
+              alias deploy-vps="nixos-rebuild switch --flake .#vps --target-host root@vps"
+              alias deploy-home="home-manager switch --flake .#$USER@$HOST"
+            '';
+          };
+        }
+      );
     };
 }
