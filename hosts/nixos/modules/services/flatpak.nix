@@ -6,7 +6,6 @@
     packages = [
       "org.vinegarhq.Sober"
       "org.vinegarhq.Vinegar"
-      "com.spotify.Client"
       "md.obsidian.Obsidian"
     ];
     overrides = {
