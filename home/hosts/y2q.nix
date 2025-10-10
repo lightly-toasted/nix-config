@@ -3,14 +3,13 @@
 {
   imports = [
     inputs.nixvim.homeModules.nixvim
-    inputs.sops-nix.homeManagerModules.sops
-  ] ++ (
-    let
-      modulesPath = ../modules;
-      cliModules = builtins.attrNames (builtins.readDir (modulesPath + "/cli/"));
-    in
-      map (module: modulesPath + "/cli/${module}") cliModules
-  );
+
+    ../modules/cli/git.nix
+    ../modules/cli/ripgrep.nix
+    ../modules/cli/btop.nix
+    ../modules/cli/yazi.nix
+    ../modules/cli/nixvim
+  ];
 
   home = {
     username = "android";

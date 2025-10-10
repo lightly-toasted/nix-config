@@ -9,6 +9,7 @@
     ../modules/cli/sops.nix
     ../modules/cli/yazi.nix
     ../modules/cli/zsh.nix
+    ../modules/cli/btop.nix
   ];
 
   home = {
