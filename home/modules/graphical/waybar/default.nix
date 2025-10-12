@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   programs.waybar = {
     enable = true;
@@ -52,6 +54,7 @@
         format-source = "{volume}% ";
         format-source-muted = "";
         on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        on-click-right = "${pkgs.pavucontrol}/bin/pavucontrol";
       };
 
       systemd-failed-units = {
