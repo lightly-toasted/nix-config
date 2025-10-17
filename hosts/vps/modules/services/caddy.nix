@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, ... }:
 
 {
   services.caddy = {
@@ -6,17 +6,20 @@
     
     # zipline
     virtualHosts."i.toast.name".extraConfig = ''
-      reverse_proxy http://127.0.0.1:3000
+      reverse_proxy http://127.0.0.1:${toString config.services.zipline.settings.CORE_PORT}
     '';
 
     # forgejo
     virtualHosts."git.toast.name".extraConfig = ''
-      reverse_proxy http://127.0.0.1:3001
+      reverse_proxy http://127.0.0.1:${toString config.services.forgejo.settings.server.HTTP_PORT}
     '';
 
-    # vaultwarden
+    # tailscale
     virtualHosts."vps.curl-pence.ts.net".extraConfig = ''
-      reverse_proxy /vaultwarden/* http://127.0.0.1:8222
+      reverse_proxy /vaultwarden/* http://127.0.0.1:${toString config.services.vaultwarden.config.ROCKET_PORT}
+      handle_path /trilium/* {
+        reverse_proxy http://127.0.0.1:${toString config.services.trilium-server.port}
+      }
     '';
   };
 }

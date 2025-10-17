@@ -6,5 +6,6 @@
     ./zipline.nix
     ./caddy.nix
     ./forgejo.nix
+    ./trilium-server.nix
   ];
 }
