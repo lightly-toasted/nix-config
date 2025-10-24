@@ -26,7 +26,6 @@
       bind = [
         "$mod, Q, exec, $terminal"
         "$mod, C, killactive"
-        "$mod, M, exit"
         "$mod, E, exec, $fileManager"
         "$mod, R, exec, $menu"
         "$mod, Y, togglesplit"
