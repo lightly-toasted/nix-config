@@ -88,6 +88,24 @@
         action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
         options.desc = "LSP Code Action";
       }
+      {
+        mode = ["n" "x"];
+        key = "<leader>oa";
+        action.__raw = ''function() require("opencode").ask("@selection: ", { submit = true }) end'';
+        options.desc = "Ask opencode";
+      }
+      {
+        mode = ["n" "x"];
+        key = "<leader>ox";
+        action.__raw = ''function() require("opencode").select() end'';
+        options.desc = "Execute opencode action...";
+      }
+      {
+        mode = ["n" "x"];
+        key = "<leader>og";
+        action.__raw = ''function() require("opencode").prompt("@selection") end'';
+        options.desc = "Add to opencode";
+      }
     ];
   };
 }
