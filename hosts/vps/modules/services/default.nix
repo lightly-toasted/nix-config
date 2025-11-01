@@ -7,5 +7,6 @@
     ./caddy.nix
     ./forgejo.nix
     ./trilium-server.nix
+    ./restic.nix
   ];
 }
