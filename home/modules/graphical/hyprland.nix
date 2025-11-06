@@ -6,6 +6,9 @@
     enable = true;
     package = pkgs.hyprland;
     systemd.enable = false;
+    plugins = [
+      pkgs.hyprlandPlugins.hyprexpo
+    ];
     settings = {
       exec-once = [ "waybar" "uwsm app -- firefox" ];
 
@@ -21,7 +24,16 @@
         "GTK_IM_MODULE,kime"
         "QT_IM_MODULE,kime"
         "XMODIFIERS,@im=kime"
-        ];    
+      ];
+
+      plugin = {
+        hyprexpo = {
+          columns = 2;
+          gap_size = 0;
+          bg_col = "rgb(000000)";
+          workspace_method = "first 1";
+        };
+      };
 
       bind = [
         "$mod, Q, exec, $terminal"
@@ -67,6 +79,7 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
+        "$mod, Tab, hyprexpo:expo, toggle"
 	      
         "$mod, S, exec, hyprshot-save --no-upload"
 	      "$mod SHIFT, S, exec, hyprshot-save"
