@@ -41,6 +41,7 @@
         "$mod, E, exec, $fileManager"
         "$mod, R, exec, $menu"
         "$mod, Y, togglesplit"
+        "$mod SHIFT, F, togglefloating"
         "$mod, F, fullscreen"
 
         "$mod, H, movefocus, l"
