@@ -23,6 +23,9 @@
         "flick")
             ${pkgs.systemd}/bin/systemd-run --user ${actions.flick.package}/bin/flick-action
             ;;
+        "play-pause")
+            ${pkgs.systemd}/bin/systemd-run --user ${actions.play-pause.package}/bin/play-pause-action
+            ;;
     esac
   '';
 }

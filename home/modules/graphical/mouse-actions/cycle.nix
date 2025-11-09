@@ -15,6 +15,7 @@
         "deafen") NEW_ACTION="sober-lag" ;;
         "sober-lag") NEW_ACTION="autoclick" ;;
         "autoclick") NEW_ACTION="flick" ;;
+        "flick") NEW_ACTION="play-pause" ;;
         *) NEW_ACTION="deafen"
     esac
 
