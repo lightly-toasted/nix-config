@@ -1,7 +1,7 @@
 { pkgs }:
 
-let
-  script = pkgs.writeShellScriptBin "cycle-mouse-action" ''
+{
+  package = pkgs.writeShellScriptBin "cycle-mouse-action" ''
     STATE_FILE="$HOME/.config/mouse-actions/state"
     mkdir -p "$(dirname "$STATE_FILE")"
 
@@ -21,10 +21,4 @@ let
     echo "$NEW_ACTION" > "$STATE_FILE.tmp"
     mv "$STATE_FILE.tmp" "$STATE_FILE"
   '';
-in
-{
-  package = pkgs.symlinkJoin {
-    name = "cycle-mouse-action";
-    paths = [ script pkgs.libnotify ];
-  };
 }

@@ -1,13 +1,7 @@
 { pkgs, ... }:
 
-let
-  script = pkgs.writeShellScriptBin "deafen-action" ''
-    hyprctl dispatch sendshortcut CTRL+SHIFT, D, 'class:^(vesktop)$'
-  '';
-in
 {
-  package = pkgs.symlinkJoin {
-    name = "deafen-action";
-    paths = [ script pkgs.hyprland ];
-  };
+  package = pkgs.writeShellScriptBin "deafen-action" ''
+    ${pkgs.hyprland}/bin/hyprctl dispatch sendshortcut CTRL+SHIFT, D, 'class:^(vesktop)$'
+  '';
 }

@@ -1,7 +1,7 @@
 { pkgs, actions }:
 
-let
-  script = pkgs.writeShellScriptBin "run-mouse-action" ''
+{
+  package = pkgs.writeShellScriptBin "run-mouse-action" ''
     STATE_FILE="$HOME/.config/mouse-actions/state"
     
     if [ ! -f "$STATE_FILE" ]; then
@@ -12,23 +12,17 @@ let
 
     case "$ACTION_NAME" in
         "deafen")
-            systemd-run --user ${actions.deafen.package}/bin/deafen-action
+            ${pkgs.systemd}/bin/systemd-run --user ${actions.deafen.package}/bin/deafen-action
             ;;
         "sober-lag")
-            systemd-run --user ${actions.sober-lag.package}/bin/sober-lag-action
+            ${pkgs.systemd}/bin/systemd-run --user ${actions.sober-lag.package}/bin/sober-lag-action
             ;;
         "autoclick")
-            systemd-run --user ${actions.autoclick.package}/bin/autoclick-action
+            ${pkgs.systemd}/bin/systemd-run --user ${actions.autoclick.package}/bin/autoclick-action
             ;;
         "flick")
-            systemd-run --user ${actions.flick.package}/bin/flick-action
+            ${pkgs.systemd}/bin/systemd-run --user ${actions.flick.package}/bin/flick-action
             ;;
     esac
   '';
-in
-{
-  package = pkgs.symlinkJoin {
-    name = "run-mouse-action";
-    paths = [ script pkgs.systemd ];
-  };
 }
