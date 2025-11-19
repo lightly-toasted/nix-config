@@ -7,6 +7,7 @@
       pyright.enable = true;
       tailwindcss.enable = true;
       nil_ls.enable = true;
+      gopls.enable = true;
     };
   };
 }
