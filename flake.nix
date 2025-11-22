@@ -19,7 +19,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.2";
+      url = "github:nix-community/lanzaboote";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        rust-overlay.follows = "rust-overlay";
+      };
+    };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl = {
@@ -84,9 +91,17 @@
 
             shellHook = ''
               HOST=$(hostname)
-              alias deploy-nixos="sudo nixos-rebuild switch --flake .#$HOST"
-              alias deploy-vps="nixos-rebuild switch --flake .#vps --target-host root@vps"
-              alias deploy-home="home-manager switch --flake .#$USER@$HOST"
+              deploy-nixos() {
+                sudo nixos-rebuild switch --flake .#$HOST "$@"
+              }
+
+              deploy-vps() {
+                nixos-rebuild switch --flake .#vps --target-host root@vps "$@"
+              }
+
+              deploy-home() {
+                home-manager switch --flake .#$USER@$HOST
+              }
             '';
           };
         }
