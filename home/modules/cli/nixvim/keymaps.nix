@@ -89,6 +89,12 @@
         options.desc = "LSP Code Action";
       }
       {
+        mode = "n";
+        key = "<leader>rn";
+        action = "<cmd>lua vim.lsp.buf.rename()<CR>";
+        options.desc = "LSP Rename";
+      }
+      {
         mode = ["n" "x"];
         key = "<leader>oa";
         action.__raw = ''function() require("opencode").ask("@selection: ", { submit = true }) end'';
