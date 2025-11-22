@@ -9,5 +9,6 @@
     ./ssh.nix
     ./ydotool.nix
     ./steam.nix
+    ./nix-ld.nix
   ];
 }
