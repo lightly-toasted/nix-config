@@ -89,20 +89,12 @@
               pkgs.sops
             ];
 
-            shellHook = ''
-              HOST=$(hostname)
-              deploy-nixos() {
-                sudo nixos-rebuild switch --flake .#$HOST "$@"
-              }
-
-              deploy-vps() {
-                nixos-rebuild switch --flake .#vps --target-host root@vps "$@"
-              }
-
-              deploy-home() {
-                home-manager switch --flake .#$USER@$HOST
-              }
-            '';
+            packages = [
+              (pkgs.symlinkJoin {
+                name = "deploy-bin";
+                paths = [ ./bin ];
+              })
+            ];
           };
         }
       );
