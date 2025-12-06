@@ -70,7 +70,7 @@
           extraSpecialArgs = { inherit inputs rootPath; };
           modules = [ ./home/hosts/wsl.nix ];
         };
-        "android@y2q" = home-manager.lib.homeManagerConfiguration {
+        "toast@y2q" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-linux;
           extraSpecialArgs = { inherit inputs rootPath; };
           modules = [ ./home/hosts/y2q.nix ];

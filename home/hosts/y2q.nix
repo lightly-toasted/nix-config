@@ -14,8 +14,8 @@
   ];
 
   home = {
-    username = "android";
-    homeDirectory = "/home/android";
+    username = "toast";
+    homeDirectory = "/home/toast";
     stateVersion = "24.11";
   };
 
