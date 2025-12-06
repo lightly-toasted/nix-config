@@ -89,12 +89,9 @@
               pkgs.sops
             ];
 
-            packages = [
-              (pkgs.symlinkJoin {
-                name = "deploy-bin";
-                paths = [ ./bin ];
-              })
-            ];
+            shellHook = ''
+              export PATH=${builtins.toPath ./bin}:$PATH
+            '';
           };
         }
       );
