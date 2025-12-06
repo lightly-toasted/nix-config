@@ -6,5 +6,6 @@ pkgs.mkShell {
     home-manager
     git
     sops
+    git-crypt
   ];
 }

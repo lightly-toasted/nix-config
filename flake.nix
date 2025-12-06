@@ -87,6 +87,8 @@
               pkgs.nix
               pkgs.home-manager
               pkgs.sops
+              pkgs.git
+              pkgs.git-crypt
             ];
 
             shellHook = ''
