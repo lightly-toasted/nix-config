@@ -5,7 +5,7 @@ My personal NixOS and home-manager configurations.
 - `nixos`: My main computer.
 - `vps`: 2GB KVM VPS server on [RackNerd](https://www.racknerd.com/), installed with NixOS using [nixos-infect](https://github.com/elitak/nixos-infect).
 - `wsl`: NixOS on WSL via [NixOS-WSL](https://github.com/nix-community/NixOS-WSL).
-- `y2q`: Spare Galaxy S20+ phone, repurposed as a Raspbian server using [Pi Deploy](https://github.com/DesktopECHO/Pi-hole-for-Android).
+- `y2q`: Spare Galaxy S20+ phone, repurposed as a Ubuntu server using [chroot-distro](https://github.com/Magisk-Modules-Alt-Repo/chroot-distro).
 
 ## Deploy
 ```sh
