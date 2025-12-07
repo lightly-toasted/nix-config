@@ -52,6 +52,7 @@
             source .env
             set +a
           '' else "";
+          stderrToStdout = if sCfg.log.enable then "exec 2>&1" else "";
         in
         lib.mkMerge [
           {
@@ -59,6 +60,7 @@
             "runit/services/${serviceName}/run" = {
               text = ''
                 #!/usr/bin/env bash
+                ${stderrToStdout}
                 ${envExports}
                 ${envFileSetup}
                 ${sCfg.script}
