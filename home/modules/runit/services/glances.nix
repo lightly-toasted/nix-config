@@ -3,8 +3,7 @@
 {
   runit.services.glances = {
     script = ''
-      #!/bin/bash
-      ${pkgs.glances}/bin/glances -w
+      exec ${pkgs.glances}/bin/glances -w
     '';
   };
 }

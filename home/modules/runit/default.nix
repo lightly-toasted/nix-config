@@ -18,6 +18,16 @@
             description = "Shell commands executed as the service's main process";
           };
           log.enable = lib.mkEnableOption "Enable logging";
+          environment = lib.mkOption {
+            type = lib.types.attrsOf lib.types.str;
+            default = {};
+            description = "Environment variables passed to the service's processes";
+          };
+          environmentFile = lib.mkOption {
+            type = lib.types.nullOr lib.types.path;
+            default = null;
+            description = "Environment file passed to the service";
+          };
         };
       }));
     };
@@ -28,21 +38,45 @@
   config = {
     home.file = lib.mkMerge (
       lib.mapAttrsToList (serviceName: sCfg:
-        {
-          # run script
-          "runit/services/${serviceName}/run" = {
-            text = sCfg.script;
-            executable = true;
+        let
+          envExports = lib.concatStringsSep "\n" (
+            lib.mapAttrsToList (k: v: "export ${k}='${v}'") sCfg.environment
+          );
+          envFile = lib.mkIf (sCfg.environmentFile != null) {
+            "runit/services/${serviceName}/.env" = {
+              source = sCfg.environmentFile;
+            };
           };
-          
-          # logging
-          "runit/services/${serviceName}/log/run" = lib.mkIf sCfg.log.enable {
-            text = ''
-              #!/bin/sh
-              exec svlogd -t ./main
-            '';
-          };
-        }
+          envFileSetup = if sCfg.environmentFile != null then ''
+            set -a
+            source .env
+            set +a
+          '' else "";
+        in
+        lib.mkMerge [
+          {
+            # run script
+            "runit/services/${serviceName}/run" = {
+              text = ''
+                #!/usr/bin/env bash
+                ${envExports}
+                ${envFileSetup}
+                ${sCfg.script}
+              '';
+              executable = true;
+            };
+
+            # logging
+            "runit/services/${serviceName}/log/run" = lib.mkIf sCfg.log.enable {
+              text = ''
+                #!/bin/sh
+                exec svlogd -t ./main
+              '';
+              executable = true;
+            };
+          }
+          envFile
+        ]
       ) config.runit.services
     );
   };
