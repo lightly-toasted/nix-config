@@ -70,7 +70,8 @@
             "runit/services/${serviceName}/log/run" = lib.mkIf sCfg.log.enable {
               text = ''
                 #!/bin/sh
-                exec svlogd -t ./main
+                mkdir -p main
+                exec svlogd -tt ./main
               '';
               executable = true;
             };
