@@ -19,6 +19,11 @@
       # Glances
       reverse_proxy http://localhost:61208
     }
+
+    http://grafana.ts.toast.name {
+      # Grafana
+      reverse_proxy http://localhost:${config.runit.services.grafana.environment.GF_SERVER_HTTP_PORT}
+    }
   '';
 
   runit.services.caddy = {
