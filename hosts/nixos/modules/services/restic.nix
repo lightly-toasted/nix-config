@@ -6,7 +6,7 @@
     "restic/env" = {};
   };
 
-  services.restic.backups.b2 = {
+  services.restic.backups.y2q = {
     initialize = true;
     inhibitsSleep = true;
     passwordFile = config.sops.secrets."restic/password".path;
@@ -15,15 +15,16 @@
       "/home/toast/workspace"
     ];
     exclude = [ "node_modules" ];
-    repository = "s3:https://s3.us-east-005.backblazeb2.com/restic-backups-0";
+    repository = "rest:http://y2q:9000/nixos/";
     environmentFile = config.sops.secrets."restic/env".path;
     pruneOpts = [
+      "--keep-hourly 6"
       "--keep-daily 7"
       "--keep-weekly 3"
       "--keep-monthly 3"
     ];
     timerConfig = {
-      OnCalendar = "daily";
+      OnCalendar = "hourly";
       Persistent = true;
     };
   };
