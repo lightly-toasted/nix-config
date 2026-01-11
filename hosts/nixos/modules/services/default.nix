@@ -8,5 +8,6 @@
     ./flatpak.nix
     ./restic.nix
     ./zerotierone.nix
+    ./udisks2.nix
   ];
 }
