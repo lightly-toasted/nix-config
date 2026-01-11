@@ -89,11 +89,8 @@
               pkgs.sops
               pkgs.git
               pkgs.git-crypt
+              pkgs.just
             ];
-
-            shellHook = ''
-              export PATH=${builtins.toPath ./bin}:$PATH
-            '';
           };
         }
       );

@@ -11,8 +11,8 @@ My personal NixOS and home-manager configurations.
 ```sh
 nix develop
 
-deploy-nixos # Rebuild and switch the current NixOS system on this host
-deploy-home # Apply Home Manager configuration for the current user
-deploy-vps # Rebuild and switch NixOS on the remote VPS
+just deploy-nixos # Rebuild and switch the current NixOS system on this host
+just deploy-home # Apply Home Manager configuration for the current user
+just deploy-vps # Rebuild and switch NixOS on the remote VPS
 ```
 
