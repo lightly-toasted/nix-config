@@ -12,6 +12,7 @@
     ../modules/cli/nixvim
     ../modules/cli/zsh.nix
     ../modules/cli/direnv.nix
+    ../modules/cli/zoxide.nix
   ];
 
   home = {
