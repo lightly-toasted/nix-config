@@ -6,13 +6,13 @@ default:
 _check-nh:
   @command -v nh > /dev/null 2>&1 || echo "nh is not in PATH. Run 'nix develop' first."
 
-deploy-nixos: _check-nh
+nixos: _check-nh
   nh os switch .
 
-deploy-vps: _check-nh
+vps: _check-nh
   nh os switch . -H vps --target-host root@vps
 
-deploy-home: _check-nh
+home: _check-nh
   nh home switch .
 
 update:
