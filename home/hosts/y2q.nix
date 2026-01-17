@@ -4,7 +4,6 @@
   imports = [
     inputs.nixvim.homeModules.nixvim
 
-    ../modules/runit
     ../modules/cli/git.nix
     ../modules/cli/ripgrep.nix
     ../modules/cli/btop.nix

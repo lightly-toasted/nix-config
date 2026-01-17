@@ -88,7 +88,6 @@
               pkgs.home-manager
               pkgs.sops
               pkgs.git
-              pkgs.git-crypt
               pkgs.just
               pkgs.nh
             ];

@@ -6,7 +6,6 @@ pkgs.mkShell {
     home-manager
     git
     sops
-    git-crypt
     just
     nh
   ];
