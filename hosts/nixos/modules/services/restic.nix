@@ -3,7 +3,7 @@
 {
   sops.secrets = {
     "restic/password" = {};
-    "restic/env" = {};
+    "restic/env/nixos" = {};
   };
 
   services.restic.backups.y2q = {
@@ -15,8 +15,8 @@
       "/home/toast/workspace"
     ];
     exclude = [ "node_modules" ];
-    repository = "rest:http://y2q:9000/nixos/";
-    environmentFile = config.sops.secrets."restic/env".path;
+    repository = "rest:http://restic.ts.700457.xyz/nixos/";
+    environmentFile = config.sops.secrets."restic/env/nixos".path;
     pruneOpts = [
       "--keep-hourly 6"
       "--keep-daily 7"
