@@ -10,5 +10,6 @@
     ./ydotool.nix
     ./steam.nix
     ./nix-ld.nix
+    ./nh.nix
   ];
 }

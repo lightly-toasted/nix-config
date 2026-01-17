@@ -3,19 +3,20 @@
 default:
   @just --list
 
-deploy-nixos:
-  sudo nixos-rebuild switch --flake .#$(hostname)
+_check-nh:
+  @command -v nh > /dev/null 2>&1 || echo "nh is not in PATH. Run 'nix develop' first."
 
-deploy-vps:
-  nixos-rebuild switch --flake .#vps --target-host root@vps
+deploy-nixos: _check-nh
+  nh os switch .
 
-deploy-home:
-  home-manager switch --flake .#$USER@$(hostname)
+deploy-vps: _check-nh
+  nh os switch . -H vps --target-host root@vps
+
+deploy-home: _check-nh
+  nh home switch .
 
 update:
   nix flake update --commit-lock-file
 
-gc:
-  nix-collect-garbage -d
-  nix-collect-garbage --delete-older-than 7d
-  nix-store --gc
+gc: _check-nh
+  nh clean all --keep-since 7d

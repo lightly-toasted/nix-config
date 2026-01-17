@@ -90,6 +90,7 @@
               pkgs.git
               pkgs.git-crypt
               pkgs.just
+              pkgs.nh
             ];
           };
         }

@@ -7,5 +7,7 @@ pkgs.mkShell {
     git
     sops
     git-crypt
+    just
+    nh
   ];
 }
