@@ -25,6 +25,28 @@
     export EDITOR="nvim"
     export VISUAL="nvim"
     export LANG=en_US.UTF-8
+
+    # ssh-agent
+    SSH_ENV="$HOME/.ssh/environment"
+
+    function start_agent {
+        ssh-agent | sed 's/^echo/#echo/' > "$SSH_ENV"
+        chmod 600 "$SSH_ENV"
+        . "$SSH_ENV" > /dev/null
+    }
+
+    # check for running ssh-agent with proper $SSH_AGENT_PID
+    if [ -n "$SSH_AGENT_PID" ]; then
+        ps -ef | grep "$SSH_AGENT_PID" | grep ssh-agent > /dev/null
+        if [ $? -ne 0 ]; then
+            start_agent
+        fi
+    else
+        if [ -f "$SSH_ENV" ]; then
+            . "$SSH_ENV" > /dev/null
+        fi
+        ps -ef | grep "$SSH_AGENT_PID" | grep -v grep | grep ssh-agent > /dev/null || start_agent
+    fi
   '';
 
   nixpkgs.config.allowUnfree = true;
