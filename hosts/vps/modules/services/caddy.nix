@@ -20,6 +20,9 @@
       handle_path /trilium/* {
         reverse_proxy http://127.0.0.1:${toString config.services.trilium-server.port}
       }
+      handle_path /restic/* {
+        reverse_proxy http://${toString config.services.restic.server.listenAddress}
+      }
     '';
   };
 }
