@@ -1,8 +1,8 @@
 {
   programs.nixcord = {
     enable = true;
-    discord.enable = false;
-    vesktop.enable = true;
+    discord.vencord.enable = false;
+    discord.equicord.enable = true;
     config = {
       plugins = {
         biggerStreamPreview.enable = true;
@@ -27,6 +27,9 @@
         webKeybinds.enable = true;
         webScreenShareFixes.enable = true;
         youtubeAdblock.enable = true;
+        limitMiddleClickPaste.enable = true;
+        mediaPlaybackSpeed.enable = true;
+        pinIcon.enable = true;
       };
     };
   };
