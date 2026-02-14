@@ -33,6 +33,7 @@
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/hyprland";
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
