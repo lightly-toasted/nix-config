@@ -170,8 +170,8 @@
       };
       
       windowrule = [
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^%,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        "match:class .*, suppress_event maximize"
+        "match:class ^$, match:title ^$, match:xwayland 1, no_focus on"
       ];
     };
   };

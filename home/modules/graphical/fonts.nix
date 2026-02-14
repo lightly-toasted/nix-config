@@ -11,11 +11,11 @@
     fira-code
     font-awesome
     liberation_ttf
-    xorg.fontutil
-    xorg.fontbh100dpi
-    xorg.fontbh75dpi
+    font-util
+    font-bh-75dpi
+    font-bh-100dpi
     
-    xorg.mkfontscale
+    mkfontscale
     nerd-fonts.jetbrains-mono
   ];
 }

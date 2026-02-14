@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, ... }: {
 
   programs.zsh = {
     enable = true;
@@ -11,5 +11,6 @@
       gl = "git log --oneline --graph --decorate --all";
       ga = "git add --all";
     };
+    dotDir = "${config.xdg.configHome}/zsh";
   };
 }
