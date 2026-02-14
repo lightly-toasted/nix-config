@@ -9,5 +9,6 @@
     ./restic.nix
     ./zerotierone.nix
     ./udisks2.nix
+    ./ratbagd.nix
   ];
 }
