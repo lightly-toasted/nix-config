@@ -17,9 +17,6 @@
     # tailscale
     virtualHosts."vps.curl-pence.ts.net".extraConfig = ''
       reverse_proxy /vaultwarden/* http://127.0.0.1:${toString config.services.vaultwarden.config.ROCKET_PORT}
-      handle_path /trilium/* {
-        reverse_proxy http://127.0.0.1:${toString config.services.trilium-server.port}
-      }
       handle_path /restic/* {
         reverse_proxy http://${toString config.services.restic.server.listenAddress}
       }
