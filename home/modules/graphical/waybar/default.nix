@@ -7,10 +7,11 @@
     settings = [{
       position = "top";
       height = 5;
-      output = "HDMI-A-1";
+      output = "!DP-1";
       modules-left = [ "custom/mouse-actions" ];
       modules-center = [ "privacy" ];
       modules-right = [
+        "battery"
         "pulseaudio"
         "network"
         "cpu"
@@ -72,6 +73,15 @@
         ];
 
         icon-size = 14;
+      };
+
+      battery = {
+        interval = 60;
+        format = "{capacity}% {icon}";
+        format-icons = {
+            default = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+            charge = ["󰢟" "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅"];
+        };
       };
 
       "custom/mouse-actions" = {
