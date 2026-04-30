@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  programs.mouse-actions.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
