@@ -58,6 +58,10 @@
           specialArgs = { inherit inputs rootPath; };
           modules = [ ./hosts/vps/configuration.nix ];
         };
+        ideapad = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs rootPath; };
+          modules = [ ./hosts/ideapad/configuration.nix ];
+        };
       };
 
       homeConfigurations = {
@@ -75,6 +79,11 @@
           pkgs = nixpkgs.legacyPackages.aarch64-linux;
           extraSpecialArgs = { inherit inputs rootPath; };
           modules = [ ./home/hosts/y2q.nix ];
+        };
+        "toast@ideapad" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs rootPath; };
+          modules = [ ./home/hosts/ideapad.nix ];
         };
       };
 

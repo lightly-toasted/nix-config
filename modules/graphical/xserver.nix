@@ -3,6 +3,5 @@
 {
   services.xserver = {
     xkb.layout = "us";
-    videoDrivers = [ "nvidia" ];
   };
 }

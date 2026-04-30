@@ -3,6 +3,11 @@
 {
   imports = [
     inputs.sops-nix.nixosModules.sops
+
+    ./modules/boot.nix
+    ./modules/network.nix
+    ./modules/users.nix
+
     ../../modules/core/filesystem.nix
     ../../modules/core/sops.nix
     ../../modules/services/tailscale.nix
@@ -13,10 +18,7 @@
     ../../modules/services/trilium-server.nix
     ../../modules/services/vaultwarden.nix
     ../../modules/services/zipline.nix
-    ./modules/boot.nix
-    ./modules/network.nix
-    ./modules/users.nix
-    ./modules/tailscale.nix
+    ./modules/services/tailscale.nix
     ./modules/services/restic.nix
   ];
   
