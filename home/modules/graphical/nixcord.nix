@@ -27,7 +27,6 @@
         webKeybinds.enable = true;
         webScreenShareFixes.enable = true;
         youtubeAdblock.enable = true;
-        limitMiddleClickPaste.enable = true;
         mediaPlaybackSpeed.enable = true;
         pinIcon.enable = true;
       };
