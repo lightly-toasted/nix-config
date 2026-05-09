@@ -28,9 +28,10 @@
       ../../modules/services/udisks2.nix
       ../../modules/services/zerotierone.nix
       ../../modules/services/openssh.nix
-      ../../modules/services/docker.nix
       ../../modules/services/pufferpanel.nix
       ../../modules/services/caddy.nix
+      ../../modules/services/docker.nix
+      ../../modules/services/flatnotes.nix
       ./modules/services/caddy.nix
     ];
 
