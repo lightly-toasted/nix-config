@@ -30,6 +30,8 @@
       ../../modules/services/openssh.nix
       ../../modules/services/docker.nix
       ../../modules/services/pufferpanel.nix
+      ../../modules/services/caddy.nix
+      ./modules/services/caddy.nix
     ];
 
   system.stateVersion = "25.11";

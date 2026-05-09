@@ -20,6 +20,7 @@
     ../../modules/services/zipline.nix
     ./modules/services/tailscale.nix
     ./modules/services/restic.nix
+    ./modules/services/caddy.nix
   ];
   
   system.stateVersion = "23.11";

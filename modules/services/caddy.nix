@@ -1,25 +1,13 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
+  sops.secrets.caddy_env = {};
   services.caddy = {
     enable = true;
-    
-    # zipline
-    virtualHosts."i.toast.name".extraConfig = ''
-      reverse_proxy http://127.0.0.1:${toString config.services.zipline.settings.CORE_PORT}
-    '';
-
-    # forgejo
-    virtualHosts."git.toast.name".extraConfig = ''
-      reverse_proxy http://127.0.0.1:${toString config.services.forgejo.settings.server.HTTP_PORT}
-    '';
-
-    # tailscale
-    virtualHosts."vps.curl-pence.ts.net".extraConfig = ''
-      reverse_proxy /vaultwarden/* http://127.0.0.1:${toString config.services.vaultwarden.config.ROCKET_PORT}
-      handle_path /restic/* {
-        reverse_proxy http://${toString config.services.restic.server.listenAddress}
-      }
-    '';
+    package = pkgs.caddy.withPlugins {
+      plugins = [ "github.com/caddy-dns/cloudflare@v0.2.4" ];
+      hash = "sha256-J0HWjCPoOoARAxDpG2bS9c0x5Wv4Q23qWZbTjd8nW84=";
+    };
+    environmentFile = config.sops.secrets.caddy_env.path;
   };
 }

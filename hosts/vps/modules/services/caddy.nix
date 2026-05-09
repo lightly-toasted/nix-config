@@ -1,0 +1,23 @@
+{ config, ... }:
+
+{
+  services.caddy = {
+    # zipline
+    virtualHosts."i.toast.name".extraConfig = ''
+      reverse_proxy http://127.0.0.1:${toString config.services.zipline.settings.CORE_PORT}
+    '';
+
+    # forgejo
+    virtualHosts."git.toast.name".extraConfig = ''
+      reverse_proxy http://127.0.0.1:${toString config.services.forgejo.settings.server.HTTP_PORT}
+    '';
+
+    # tailscale
+    virtualHosts."vps.curl-pence.ts.net".extraConfig = ''
+      reverse_proxy /vaultwarden/* http://127.0.0.1:${toString config.services.vaultwarden.config.ROCKET_PORT}
+      handle_path /restic/* {
+        reverse_proxy http://${toString config.services.restic.server.listenAddress}
+      }
+    '';
+  };
+}
