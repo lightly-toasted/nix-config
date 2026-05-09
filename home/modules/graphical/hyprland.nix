@@ -172,6 +172,10 @@
         "match:class .*, suppress_event maximize"
         "match:class ^$, match:title ^$, match:xwayland 1, no_focus on"
       ];
+
+      cursor = {
+        no_hardware_cursors = true;
+      };
     };
   };
 
