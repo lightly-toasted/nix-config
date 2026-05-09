@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ inputs, ... }:
 
 {
   imports =
@@ -20,6 +20,7 @@
       ../../modules/graphical/xserver.nix
       ../../modules/graphical/flatpak.nix
       ../../modules/graphical/ratbagd.nix
+      ../../modules/graphical/pipewire.nix
       ../../modules/programs/nh.nix
       ../../modules/programs/nix-ld.nix
       ../../modules/programs/ssh.nix
