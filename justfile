@@ -1,16 +1,18 @@
 #!/usr/bin/env -S just --justfile
 
+
 default:
   @just --list
 
 _check-nh:
   @command -v nh > /dev/null 2>&1 || echo "nh is not in PATH. Run 'nix develop' first."
 
-nixos: _check-nh
-  nh os switch .
-
-vps: _check-nh
-  nh os switch . -H vps --target-host root@vps
+deploy HOST=`hostname`: _check-nh
+  if [ "{{HOST}}" = "$(hostname)" ]; then \
+    nh os switch .; \
+  else \
+    nh os switch . -H {{HOST}} --target-host root@{{HOST}}; \
+  fi
 
 home: _check-nh
   nh home switch .
