@@ -9,7 +9,7 @@
 
   programs.opencode = {
     enable = true;
-    settings = {
+    tui = {
       theme = "opencode";
       provider = {
         openrouter = {
