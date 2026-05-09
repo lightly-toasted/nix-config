@@ -7,6 +7,9 @@
       inputs.lanzaboote.nixosModules.lanzaboote
       ./hardware-configuration.nix
     ] ++ [
+      ./modules/boot.nix
+      ./modules/network.nix
+      ./modules/users.nix
       ../../modules/core/packages.nix
       ../../modules/core/time.nix
       ../../modules/core/sops.nix
@@ -25,9 +28,8 @@
       ../../modules/services/udisks2.nix
       ../../modules/services/zerotierone.nix
       ../../modules/services/openssh.nix
-      ./modules/boot.nix
-      ./modules/network.nix
-      ./modules/users.nix
+      ../../modules/services/docker.nix
+      ../../modules/services/pufferpanel.nix
     ];
 
   system.stateVersion = "25.11";
