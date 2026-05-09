@@ -35,6 +35,11 @@
             "CONTEXT7_API_KEY" = "{file:${config.sops.secrets."context7_api_key".path}}";
           };
         };
+        unityMCP = {
+          enabled = true;
+          type = "remote";
+          url = "http://127.0.0.1:8080/mcp";
+        };
       };
     };
   };
