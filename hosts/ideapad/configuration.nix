@@ -30,6 +30,7 @@
       ../../modules/server/caddy.nix
       ../../modules/server/docker.nix
       ../../modules/server/flatnotes.nix
+      ../../modules/server/immich.nix
       ./modules/services/caddy.nix
     ];
 
