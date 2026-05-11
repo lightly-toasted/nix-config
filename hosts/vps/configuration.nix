@@ -7,17 +7,15 @@
     ./modules/boot.nix
     ./modules/network.nix
     ./modules/users.nix
+    ./modules/filesystem.nix
 
-    ../../modules/core/filesystem.nix
-    ../../modules/core/sops.nix
-    ../../modules/services/tailscale.nix
-    ../../modules/services/caddy.nix
-    ../../modules/services/forgejo.nix
-    ../../modules/services/openssh.nix
-    ../../modules/services/restic-rest-server.nix
-    ../../modules/services/trilium-server.nix
-    ../../modules/services/vaultwarden.nix
-    ../../modules/services/zipline.nix
+    ../../modules/common
+    ../../modules/server/forgejo.nix
+    ../../modules/server/openssh.nix
+    ../../modules/server/restic-rest-server.nix
+    ../../modules/server/trilium-server.nix
+    ../../modules/server/vaultwarden.nix
+    ../../modules/server/zipline.nix
     ./modules/services/tailscale.nix
     ./modules/services/restic.nix
     ./modules/services/caddy.nix

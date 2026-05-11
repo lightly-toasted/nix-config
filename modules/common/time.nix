@@ -15,10 +15,5 @@
       LC_TELEPHONE = "ko_KR.UTF-8";
       LC_TIME = "ko_KR.UTF-8";
     };
-    inputMethod = {
-      enable = true;
-      type = "kime";
-      kime.iconColor = "White";
-    };
   };
 }

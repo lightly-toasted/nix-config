@@ -10,28 +10,26 @@
       ./modules/boot.nix
       ./modules/network.nix
       ./modules/users.nix
-      ../../modules/core/packages.nix
-      ../../modules/core/time.nix
-      ../../modules/core/sops.nix
-      ../../modules/graphical/environment.nix
-      ../../modules/graphical/greetd.nix
-      ../../modules/graphical/hyprland.nix
-      ../../modules/graphical/thunar.nix
-      ../../modules/graphical/xfconf.nix
-      ../../modules/graphical/xserver.nix
+      ../../modules/common
+      ../../modules/programs/environment.nix
+      ../../modules/programs/greetd.nix
+      ../../modules/programs/hyprland.nix
+      ../../modules/programs/thunar.nix
+      ../../modules/programs/xfconf.nix
+      ../../modules/programs/xserver.nix
       ../../modules/programs/nh.nix
       ../../modules/programs/nix-ld.nix
       ../../modules/programs/ssh.nix
       ../../modules/programs/ydotool.nix
       ../../modules/programs/zsh.nix
-      ../../modules/services/tailscale.nix
-      ../../modules/services/udisks2.nix
-      ../../modules/services/zerotierone.nix
-      ../../modules/services/openssh.nix
-      ../../modules/services/pufferpanel.nix
-      ../../modules/services/caddy.nix
-      ../../modules/services/docker.nix
-      ../../modules/services/flatnotes.nix
+      ../../modules/programs/udisks2.nix
+      ../../modules/programs/tailscale.nix
+      ../../modules/programs/zerotierone.nix
+      ../../modules/server/openssh.nix
+      ../../modules/server/pufferpanel.nix
+      ../../modules/server/caddy.nix
+      ../../modules/server/docker.nix
+      ../../modules/server/flatnotes.nix
       ./modules/services/caddy.nix
     ];
 
