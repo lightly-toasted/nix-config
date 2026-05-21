@@ -42,5 +42,10 @@
         };
       };
     };
+    skills = {
+      # https://github.com/JuliusBrussee/caveman
+      caveman = builtins.readFile ./skills/caveman.md;
+      caveman-commit = builtins.readFile ./skills/caveman-commit.md;
+    };
   };
 }
