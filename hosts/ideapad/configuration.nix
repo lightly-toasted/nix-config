@@ -3,6 +3,7 @@
 {
   imports =
     [ 
+      inputs.nix-flatpak.nixosModules.nix-flatpak
       inputs.sops-nix.nixosModules.sops
       inputs.lanzaboote.nixosModules.lanzaboote
       ./hardware-configuration.nix
@@ -25,6 +26,7 @@
       ../../modules/programs/udisks2.nix
       ../../modules/programs/tailscale.nix
       ../../modules/programs/zerotierone.nix
+      ../../modules/programs/flatpak.nix
       ../../modules/server/openssh.nix
       ../../modules/server/pufferpanel.nix
       ../../modules/server/caddy.nix
