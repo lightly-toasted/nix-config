@@ -36,6 +36,7 @@
       ./modules/services/caddy.nix
     ];
 
+  services.logind.lidSwitch = "ignore";
   system.stateVersion = "25.11";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
