@@ -27,6 +27,7 @@
       ../../modules/programs/tailscale.nix
       ../../modules/programs/zerotierone.nix
       ../../modules/programs/flatpak.nix
+      ../../modules/programs/kime.nix
       ../../modules/server/openssh.nix
       ../../modules/server/pufferpanel.nix
       ../../modules/server/caddy.nix

@@ -27,6 +27,7 @@
       ../../modules/programs/tailscale.nix
       ../../modules/programs/udisks2.nix
       ../../modules/programs/zerotierone.nix
+      ../../modules/programs/kime.nix
       ./modules/boot.nix
       ./modules/network.nix
       ./modules/users.nix
