@@ -5,6 +5,7 @@
     enable = true;
     package = pkgs.hyprland;
     systemd.enable = false;
+    configType = "hyprlang";
     settings = {
       exec-once = [ "waybar" "uwsm app -- firefox" ];
 
@@ -27,7 +28,7 @@
         "$mod, C, killactive"
         "$mod, E, exec, $fileManager"
         "$mod, R, exec, $menu"
-        "$mod, Y, togglesplit"
+        "$mod, Y, layoutmsg, togglesplit"
         "$mod SHIFT, F, togglefloating"
         "$mod, F, fullscreen"
 
@@ -153,7 +154,6 @@
       };
 
       dwindle = {
-        pseudotile = true;
         preserve_split = true;
       };
 
