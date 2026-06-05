@@ -18,6 +18,8 @@
           };
         };
       };
+    };
+    settings = {
       mcp = {
         github = {
           enabled = true;
