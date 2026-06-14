@@ -33,6 +33,7 @@
       ./modules/users.nix
       ./modules/hardware.nix
       ./modules/services/restic.nix
+      ./modules/services/xserver.nix
     ];
 
   system.stateVersion = "25.05";
