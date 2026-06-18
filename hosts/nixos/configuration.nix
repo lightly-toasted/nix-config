@@ -28,12 +28,14 @@
       ../../modules/programs/udisks2.nix
       ../../modules/programs/zerotierone.nix
       ../../modules/programs/kime.nix
+      ../../modules/programs/sunshine.nix
       ./modules/boot.nix
       ./modules/network.nix
       ./modules/users.nix
       ./modules/hardware.nix
       ./modules/services/restic.nix
       ./modules/services/xserver.nix
+      ./modules/services/sunshine.nix
     ];
 
   system.stateVersion = "25.05";

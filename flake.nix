@@ -32,10 +32,14 @@
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland.url = "github:hyprwm/hyprland";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... } @ inputs:
     let
       rootPath = ./.;
       systems = [ "x86_64-linux" "aarch64-linux" ];
@@ -82,7 +86,9 @@
         "toast@ideapad" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs rootPath; };
-          modules = [ ./home/hosts/ideapad.nix ];
+          modules = [
+            ./home/hosts/ideapad.nix
+          ];
         };
       };
 
