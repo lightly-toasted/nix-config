@@ -6,8 +6,12 @@
       inputs.nix-flatpak.nixosModules.nix-flatpak
       inputs.sops-nix.nixosModules.sops
       inputs.lanzaboote.nixosModules.lanzaboote
-      ./hardware-configuration.nix
-    ] ++ [
+    ] ++ (with inputs.nixos-hardware.nixosModules; [
+      common-cpu-amd
+      common-gpu-nvidia-nonprime
+      common-pc
+      common-pc-ssd
+    ]) ++ [
       ../../modules/common
       ../../modules/programs/environment.nix
       ../../modules/programs/greetd.nix
@@ -34,7 +38,6 @@
       ./modules/users.nix
       ./modules/hardware.nix
       ./modules/services/restic.nix
-      ./modules/services/xserver.nix
       ./modules/services/sunshine.nix
     ];
 
