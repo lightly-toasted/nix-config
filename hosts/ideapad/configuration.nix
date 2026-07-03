@@ -18,6 +18,7 @@
       ./modules/hardware.nix
 #
       ../../modules/common
+      ../../modules/hardware/bluetooth.nix
       ../../modules/programs/environment.nix
       ../../modules/programs/greetd.nix
       ../../modules/programs/hyprland.nix
