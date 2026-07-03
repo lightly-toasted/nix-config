@@ -42,8 +42,10 @@
       ../../modules/server/docker.nix
       ../../modules/server/flatnotes.nix
       ../../modules/server/immich.nix
+      ../../modules/server/snapserver.nix
 
       ./modules/services/caddy.nix
+      ./modules/services/snapserver.nix
     ];
 
   services.logind.lidSwitch = "ignore";
