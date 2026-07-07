@@ -8,7 +8,7 @@
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
     dejavu_fonts
-    fira-code
+    maple-mono.NF
     font-awesome
     liberation_ttf
     font-util
@@ -16,6 +16,6 @@
     font-bh-100dpi
     
     mkfontscale
-    nerd-fonts.jetbrains-mono
+
   ];
 }
