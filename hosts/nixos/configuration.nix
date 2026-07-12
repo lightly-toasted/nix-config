@@ -33,6 +33,7 @@
       ../../modules/programs/zerotierone.nix
       ../../modules/programs/kime.nix
       ../../modules/programs/sunshine.nix
+      ../../modules/programs/hyprlock.nix
       ./modules/boot.nix
       ./modules/network.nix
       ./modules/users.nix

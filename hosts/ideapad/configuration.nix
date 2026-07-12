@@ -36,6 +36,7 @@
       ../../modules/programs/flatpak.nix
       ../../modules/programs/kime.nix
       ../../modules/programs/sunshine.nix
+      ../../modules/programs/hyprlock.nix
       ../../modules/server/openssh.nix
       ../../modules/server/pufferpanel.nix
       ../../modules/server/caddy.nix

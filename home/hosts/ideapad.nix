@@ -19,6 +19,7 @@
     ../modules/graphical/tofi.nix
     ../modules/graphical/udiskie.nix
     ../modules/graphical/xdg.nix
+    ../modules/graphical/hyprlock.nix
   ]  ++ (
     let
       modulesPath = ../modules;
