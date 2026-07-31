@@ -12,7 +12,7 @@
     ../modules/graphical/dunst.nix
     ../modules/graphical/firefox.nix
     ../modules/graphical/fonts.nix
-    ../modules/graphical/niri
+    ../modules/graphical/niri.nix
     ../modules/graphical/swayidle.nix
     ../modules/graphical/swaylock.nix
     ../modules/graphical/hyprshot-save.nix
