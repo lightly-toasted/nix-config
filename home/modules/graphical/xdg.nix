@@ -1,7 +1,10 @@
-{
+{ pkgs, ... }: {
   xdg = {
     enable = true;
-    portal.enable = true;
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    };
     mimeApps = {
       enable = true;
       defaultApplications = {

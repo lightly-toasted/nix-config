@@ -5,21 +5,22 @@
     inputs.nixvim.homeModules.nixvim
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     inputs.sops-nix.homeManagerModules.sops
+    inputs.niri-flake.homeModules.niri
 
     ../modules/graphical/waybar
     ../modules/graphical/cliphist.nix
     ../modules/graphical/dunst.nix
     ../modules/graphical/firefox.nix
     ../modules/graphical/fonts.nix
-    ../modules/graphical/hypridle.nix
-    ../modules/graphical/hyprland.nix
+    ../modules/graphical/niri
+    ../modules/graphical/swayidle.nix
+    ../modules/graphical/swaylock.nix
     ../modules/graphical/hyprshot-save.nix
     ../modules/graphical/kitty.nix
     ../modules/graphical/powermenu.nix
     ../modules/graphical/tofi.nix
     ../modules/graphical/udiskie.nix
     ../modules/graphical/xdg.nix
-    ../modules/graphical/hyprlock.nix
   ]  ++ (
     let
       modulesPath = ../modules;

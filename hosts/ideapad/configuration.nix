@@ -21,7 +21,7 @@
       ../../modules/hardware/bluetooth.nix
       ../../modules/programs/environment.nix
       ../../modules/programs/greetd.nix
-      ../../modules/programs/hyprland.nix
+      ../../modules/programs/niri.nix
       ../../modules/programs/thunar.nix
       ../../modules/programs/xfconf.nix
       ../../modules/programs/xserver.nix
@@ -36,7 +36,7 @@
       ../../modules/programs/flatpak.nix
       ../../modules/programs/kime.nix
       ../../modules/programs/sunshine.nix
-      ../../modules/programs/hyprlock.nix
+      ../../modules/programs/swaylock.nix
       ../../modules/server/openssh.nix
       ../../modules/server/pufferpanel.nix
       ../../modules/server/caddy.nix

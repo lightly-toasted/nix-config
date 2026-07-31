@@ -15,7 +15,7 @@
       ../../modules/common
       ../../modules/programs/environment.nix
       ../../modules/programs/greetd.nix
-      ../../modules/programs/hyprland.nix
+      ../../modules/programs/niri.nix
       ../../modules/programs/steam.nix
       ../../modules/programs/thunar.nix
       ../../modules/programs/xfconf.nix
@@ -33,7 +33,7 @@
       ../../modules/programs/zerotierone.nix
       ../../modules/programs/kime.nix
       ../../modules/programs/sunshine.nix
-      ../../modules/programs/hyprlock.nix
+      ../../modules/programs/swaylock.nix
       ./modules/boot.nix
       ./modules/network.nix
       ./modules/users.nix

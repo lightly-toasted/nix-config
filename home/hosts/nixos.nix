@@ -5,6 +5,7 @@
     inputs.nixcord.homeModules.nixcord
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     inputs.sops-nix.homeManagerModules.sops
+    inputs.niri-flake.homeModules.niri
   ] ++ (
     let
       modulesPath = ../modules;
