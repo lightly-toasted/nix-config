@@ -1,8 +1,8 @@
 {
   programs.nixcord = {
     enable = true;
-    discord.vencord.enable = false;
-    discord.equicord.enable = true;
+    equibop.enable = true;
+    discord.enable = false;
     config = {
       plugins = {
         biggerStreamPreview.enable = true;
@@ -11,7 +11,6 @@
         fixSpotifyEmbeds.enable = true;
         fixYoutubeEmbeds.enable = true;
         forceOwnerCrown.enable = true;
-        friendsSince.enable = true;
         gameActivityToggle.enable = true;
         permissionsViewer.enable = true;
         serverInfo.enable = true;
