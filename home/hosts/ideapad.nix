@@ -15,7 +15,6 @@
     ../modules/graphical/niri.nix
     ../modules/graphical/swayidle.nix
     ../modules/graphical/swaylock.nix
-    ../modules/graphical/hyprshot-save.nix
     ../modules/graphical/kitty.nix
     ../modules/graphical/powermenu.nix
     ../modules/graphical/tofi.nix
