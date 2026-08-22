@@ -34,6 +34,7 @@
       ../../modules/programs/kime.nix
       ../../modules/programs/sunshine.nix
       ../../modules/programs/swaylock.nix
+      ../../modules/server/ollama.nix
       ./modules/boot.nix
       ./modules/network.nix
       ./modules/users.nix
@@ -41,6 +42,7 @@
       ./modules/services/restic.nix
       ./modules/services/sunshine.nix
       ./modules/services/pipewire.nix
+      ./modules/services/ollama.nix
     ];
 
   system.stateVersion = "25.05";
