@@ -21,17 +21,24 @@
           POSTDISPLAY=" [Generating command...]"
           zle redisplay
 
-          local prompt="Provide ONLY the executable shell one-liner command for: $query. Rules: Output raw text only. Do NOT start with 'sh', 'bash', or 'zsh'. Do NOT use markdown code blocks or backticks. No explanations."
-          local cmd=$(${pkgs.ollama}/bin/ollama run qwen2.5-coder:3b "$prompt" 2>/dev/null | tr -d '`')
+          payload=$(${pkgs.jq}/bin/jq -n --arg q "$query" '{
+            model: "qwen2.5-coder:3b",
+            prompt: ("shell command for: " + $q),
+            stream: false,
+            format: {
+              type: "object",
+              properties: {command: {type: "string"}},
+              required: ["command"]
+            }
+          }')
+
+          local cmd=$(curl -s http://100.75.229.9:11434/api/generate -d "$payload" | ${pkgs.jq}/bin/jq -r '.response | fromjson | .command')
 
           BUFFER="$cmd"
           POSTDISPLAY=""
           CURSOR=$#BUFFER
       }
-      
-      if [[ "$(hostname -s)" != "nixos" ]]; then
-        export OLLAMA_HOST="http://nixos:11434"
-      fi
+
       zle -N ollama-command-gen
       bindkey '^G' ollama-command-gen
     '';
