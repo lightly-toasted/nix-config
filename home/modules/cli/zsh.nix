@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
 
   programs.zsh = {
     enable = true;
@@ -22,7 +22,7 @@
           zle redisplay
 
           local prompt="Provide ONLY the executable shell one-liner command for: $query. Rules: Output raw text only. Do NOT start with 'sh', 'bash', or 'zsh'. Do NOT use markdown code blocks or backticks. No explanations."
-          local cmd=$(ollama run qwen2.5-coder:3b "$prompt" 2>/dev/null | tr -d '`')
+          local cmd=$(${pkgs.ollama}/bin/ollama run qwen2.5-coder:3b "$prompt" 2>/dev/null | tr -d '`')
 
           BUFFER="$cmd"
           POSTDISPLAY=""
