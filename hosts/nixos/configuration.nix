@@ -40,6 +40,7 @@
       ./modules/hardware.nix
       ./modules/services/restic.nix
       ./modules/services/sunshine.nix
+      ./modules/services/pipewire.nix
     ];
 
   system.stateVersion = "25.05";
