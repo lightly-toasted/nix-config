@@ -45,6 +45,7 @@
       ../../modules/server/flatnotes.nix
       ../../modules/server/immich.nix
       ../../modules/server/snapserver.nix
+      ../../modules/server/wallos.nix
 
       ./modules/services/caddy.nix
       ./modules/services/snapserver.nix

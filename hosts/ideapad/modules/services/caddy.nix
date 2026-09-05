@@ -23,5 +23,12 @@
       }
       reverse_proxy localhost:${toString config.services.immich.port}
     '';
+    # Wallos
+    virtualHosts."wallos.ts.700457.xyz".extraConfig = ''
+      tls {
+        dns cloudflare {env.CF_API_TOKEN}
+      }
+      reverse_proxy localhost:3002
+    '';
   };
 }
