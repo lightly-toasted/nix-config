@@ -11,7 +11,7 @@ in
   users.users.toast = {
     isNormalUser = true;
     description = "toast";
-    extraGroups = [ "networkmanager" "wheel" "ydotool" "video" "uinput" "render" ];
+    extraGroups = [ "networkmanager" "wheel" "ydotool" "video" "uinput" "render" "audio" ];
     openssh.authorizedKeys.keys = authorizedKeys;
     shell = pkgs.zsh;
   };
