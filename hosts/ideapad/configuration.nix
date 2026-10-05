@@ -16,7 +16,7 @@
       ./modules/network.nix
       ./modules/users.nix
       ./modules/hardware.nix
-#
+
       ../../modules/common
       ../../modules/hardware/bluetooth.nix
       ../../modules/programs/environment.nix
@@ -46,6 +46,7 @@
       ../../modules/server/immich.nix
       ../../modules/server/snapserver.nix
       ../../modules/server/wallos.nix
+      ../../modules/server/technitium-dns.nix
 
       ./modules/services/caddy.nix
       ./modules/services/snapserver.nix
