@@ -13,6 +13,7 @@
       common-pc-ssd
     ]) ++ [
       ../../modules/common
+      ../../modules/hardware/bluetooth.nix
       ../../modules/programs/environment.nix
       ../../modules/programs/greetd.nix
       ../../modules/programs/niri.nix
