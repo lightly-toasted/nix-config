@@ -15,6 +15,12 @@
     { device = "/dev/disk/by-uuid/da94d155-0fae-4f33-bca3-cdc55aabe718";
       fsType = "ext4";
     };
+  
+  fileSystems."/data" = 
+    { device = "/dev/disk/by-uuid/4c85da15-c9fa-45cd-8a05-adc177406b11";
+      fsType = "ext4";
+      options = [ "noatime" ];
+    };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/8EC8-E915";

@@ -51,6 +51,7 @@
       ./modules/services/caddy.nix
       ./modules/services/snapserver.nix
       ./modules/services/tlp.nix
+      ./modules/services/immich.nix
     ];
 
   services.logind.lidSwitch = "ignore";
