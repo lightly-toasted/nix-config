@@ -83,6 +83,9 @@
         "Mod+Shift+K".action.move-window-up = [];
         "Mod+Shift+L".action.move-column-right-or-to-monitor-right = [];
 
+        "Mod+Ctrl+H".action.focus-monitor-left = [];
+        "Mod+Ctrl+L".action.focus-monitor-right = [];
+
         "Mod+Alt+H".action.set-column-width = "-10%";
         "Mod+Alt+J".action.set-window-height = "+10%";
         "Mod+Alt+K".action.set-window-height = "-10%";
