@@ -47,11 +47,13 @@
       ../../modules/server/snapserver.nix
       ../../modules/server/wallos.nix
       ../../modules/server/technitium-dns.nix
+      ../../modules/server/restic-rest-server.nix
 
       ./modules/services/caddy.nix
       ./modules/services/snapserver.nix
       ./modules/services/tlp.nix
       ./modules/services/immich.nix
+      ./modules/services/restic-rest-server.nix
     ];
 
   services.logind.lidSwitch = "ignore";
