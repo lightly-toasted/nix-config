@@ -28,10 +28,6 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -54,16 +50,6 @@
           specialArgs = { inherit inputs rootPath; };
           modules = [ ./hosts/nixos/configuration.nix ];
         };
-        wsl = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs rootPath; };
-          modules = [ ./hosts/wsl/configuration.nix ];
-        };
-        vps = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs rootPath; };
-          modules = [ ./hosts/vps/configuration.nix ];
-        };
         ideapad = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs rootPath; };
           modules = [ ./hosts/ideapad/configuration.nix ];
@@ -75,11 +61,6 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs rootPath; };
           modules = [ ./home/hosts/nixos.nix ];
-        };
-        "toast@wsl" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs rootPath; };
-          modules = [ ./home/hosts/wsl.nix ];
         };
         "toast@y2q" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-linux;
