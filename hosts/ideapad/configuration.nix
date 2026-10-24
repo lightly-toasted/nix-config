@@ -48,6 +48,7 @@
       ../../modules/server/wallos.nix
       ../../modules/server/technitium-dns.nix
       ../../modules/server/restic-rest-server.nix
+      ../../modules/server/gluetun.nix
 
       ./modules/services/caddy.nix
       ./modules/services/snapserver.nix
