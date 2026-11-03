@@ -57,6 +57,15 @@
           open-floating = true;
         }
         {
+          matches = [ { app-id = "steam"; title = "^notificationtoasts_\\d+_desktop$"; } ];
+          open-focused = false;
+          default-floating-position = {
+            x = 10;
+            y = 10;
+            relative-to = "bottom-right";
+          };
+        }
+        {
           geometry-corner-radius = {
             top-left = 10.0;
             top-right = 10.0;
