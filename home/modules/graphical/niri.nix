@@ -46,14 +46,14 @@
 
       spawn-at-startup = [
         { argv = [ "waybar" ]; }
-        { argv = [ "firefox" ]; }
+        { argv = [ "glide" ]; }
       ];
 
       screenshot-path = "/data/Backup/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
 
       window-rules = [
         {
-          matches = [ { app-id = "^firefox$"; title = "^Picture-in-Picture$"; } ];
+          matches = [ { app-id = "^glide$"; title = "^Picture-in-Picture$"; } ];
           open-floating = true;
         }
         {

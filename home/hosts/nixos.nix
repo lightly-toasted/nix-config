@@ -1,4 +1,4 @@
-{ config, lib, inputs, ... }:
+{ inputs, ... }:
 {
   imports = [
     inputs.nixvim.homeModules.nixvim
@@ -6,6 +6,7 @@
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     inputs.sops-nix.homeManagerModules.sops
     inputs.niri-flake.homeModules.niri
+    inputs.glide.homeModules.default
   ] ++ (
     let
       modulesPath = ../modules;

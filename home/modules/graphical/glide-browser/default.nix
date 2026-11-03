@@ -1,9 +1,8 @@
-{ config, ... }:
-
 {
-  programs.firefox = {
+  home.file.".config/glide/glide.ts".source = ./glide.ts;
+  programs.glide-browser = {
     enable = true;
-    configPath = "${config.xdg.configHome}/mozilla/firefox";
+    # configPath = "${config.xdg.configHome}/mozilla/firefox";
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
@@ -15,11 +14,6 @@
         # Bitwarden Password Manager
         "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
-          installation_mode = "normal_installed";
-        };
-        # Vimium C
-        "vimium-c@gdh1995.cn" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/vimium-c/latest.xpi";
           installation_mode = "normal_installed";
         };
         # uBlock Origin

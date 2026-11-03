@@ -6,11 +6,12 @@
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     inputs.sops-nix.homeManagerModules.sops
     inputs.niri-flake.homeModules.niri
+    inputs.glide.homeModules.default
 
     ../modules/graphical/waybar
     ../modules/graphical/cliphist.nix
     ../modules/graphical/dunst.nix
-    ../modules/graphical/firefox.nix
+    ../modules/graphical/glide-browser
     ../modules/graphical/fonts.nix
     ../modules/graphical/niri.nix
     ../modules/graphical/swayidle.nix
