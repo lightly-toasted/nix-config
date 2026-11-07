@@ -9,6 +9,7 @@
 ⏻ Shutdown
  Reboot
  Suspend
+󰅶 Idle
  Hibernate
       """ | ${pkgs.tofi}/bin/tofi)
 
@@ -18,6 +19,7 @@
         " Lock")  ${pkgs.swaylock-effects}/bin/swaylock ;;
         "󰍃 Logout") ${pkgs.niri}/bin/niri msg action quit ;;
         " Suspend") ${pkgs.systemd}/bin/systemctl suspend ;;
+        "󰅶 Idle") ${pkgs.procps}/bin/pkill -USR1 swayidle ;;
         " Hibernate") ${pkgs.systemd}/bin/systemctl hibernate ;;
       esac
     '')
