@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   sops.secrets = {
@@ -9,8 +9,19 @@
 
   programs.opencode = {
     enable = true;
-    tui = {
-      theme = "opencode";
+
+    # workaround for https://github.com/NixOS/nixpkgs/issues/582673
+    package =
+      if pkgs.opencode.version == "2.2.5" then
+        pkgs.opencode.overrideAttrs (old: {
+          node_modules = old.node_modules.overrideAttrs (_: {
+            outputHash = "sha256-prx9dX7kUvs/E3zopkaPk5LXh3xJAy5sZeum/W8L7cA=";
+          });
+        })
+      else
+        pkgs.opencode;
+
+    settings = {
       provider = {
         openrouter = {
           options = {
@@ -18,8 +29,6 @@
           };
         };
       };
-    };
-    settings = {
       mcp = {
         github = {
           enabled = true;
@@ -37,17 +46,11 @@
             "CONTEXT7_API_KEY" = "{file:${config.sops.secrets."context7_api_key".path}}";
           };
         };
-        unityMCP = {
-          enabled = true;
-          type = "remote";
-          url = "http://127.0.0.1:8080/mcp";
-        };
       };
-    };
-    skills = {
-      # https://github.com/JuliusBrussee/caveman
-      caveman = builtins.readFile ./skills/caveman.md;
-      caveman-commit = builtins.readFile ./skills/caveman-commit.md;
+      plugins = [
+        "@dietrichgebert/ponytail"
+        "@miguelmartens/opencode-caveman"
+      ];
     };
   };
 }

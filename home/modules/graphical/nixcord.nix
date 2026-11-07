@@ -16,7 +16,6 @@
         serverInfo.enable = true;
         silentTyping.enable = true;
         spotifyCrack.enable = true;
-        summaries.enable = true;
         typingIndicator.enable = true;
         validReply.enable = true;
         validUser.enable = true;
